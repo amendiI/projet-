@@ -9,14 +9,12 @@
 //alea crée un nombre aleatoire en min et max ou entre 0 et n
 int alea(int min,int max)
 {
-    int resultat=rand()%(max-min+1);
-    return resultat+min;
+    return (rand()%(max-min+1))+min;
 }
 
 int alea(int n)
-{
-    int resultat=rand()%n;
-    return resultat;
+{ 
+    return rand()%n;
 }
 //generation du terrain
 
