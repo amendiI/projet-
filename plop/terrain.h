@@ -1,8 +1,17 @@
 #ifndef TERRAIN_H
 #define TERRAIN_H
 
+#include <iostream>
 #include <QObject>
 #include <QRect>
+
+#include "Point.h"
+#include "fct.h"
+#include "option.h"
+#include "Liste.h"
+
+
+using namespace std;
 
 class terrain : public QObject
 {
@@ -29,6 +38,8 @@ public:
     void setresistance(int resistance);
     void setaff(int x,int y);
 
+    void creearbre(Point p,terrain*** T);
+    void creerocher(Point p,terrain*** T);
 signals:
 
 public slots:

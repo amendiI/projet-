@@ -15,14 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainpage.cpp\
         terrain.cpp \
-    tmp.cpp \
-    point.cpp
+    tmp.cpp\
+    Point.cpp \
+    liste.cpp
 
 HEADERS  += mainpage.h \
     terrain.h \
     tmp.h \
     option.h \
-    fct.h \
-    point.h
+    fct.h\
+    Point.h \
+    liste.h
 
 FORMS    += mainpage.ui

@@ -1,7 +1,5 @@
 
 #include <QApplication>
-
-#include <QApplication>
 #include <QPushButton>
 #include <QWidget>
 
@@ -19,7 +17,7 @@ using namespace std;
 
 int main(int argc,char** argv)
 {
-    srand (time(NULL));//initialise la fonction rand() pour tout le programme
+    //srand (time(NULL));//initialise la fonction rand() pour tout le programme
 
 
     int t,vr1,vr2;
@@ -56,6 +54,6 @@ int main(int argc,char** argv)
 
     }
 
-
+    Liste<int> l;
     return app.exec();
 }
