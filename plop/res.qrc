@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/IMG">
+    <qresource prefix="/images">
         <file>crack1.png</file>
         <file>default1.png</file>
         <file>river1.png</file>

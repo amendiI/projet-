@@ -16,14 +16,14 @@
 #define nbeau 5
 
 //chemin des images
-#define IMG_default ":/images/default1.png"
-#define IMG_arbre ":/images/tree1.png"
-#define IMG_rocher ":/images/rock1.png"
-#define IMG_crevasse ":/images/crack1.png"
-#define IMG_eau ":/images/river1.png"
+#define IMG_default ":/IMG/default1.png"
+#define IMG_arbre ":/IMG/tree1.png"
+#define IMG_rocher ":/IMG/rock1.png"
+#define IMG_crevasse ":/IMG/crack1.png"
+#define IMG_eau ":/IMG/river1.png"
 
 //definitiond de la taille de l'écran
-#define W 1600
-#define H 900
+#define W 1080
+#define H 720
 
 #endif // OPTION_H

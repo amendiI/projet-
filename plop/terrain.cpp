@@ -4,6 +4,7 @@ terrain::terrain()
 {
     type='z';
     bloque=false;
+    setPixmap(QPixmap(":/IMG/river1.png"));
 }
 
  terrain::terrain(char t,bool b,char* image)

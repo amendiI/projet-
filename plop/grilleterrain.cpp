@@ -144,6 +144,7 @@ void Grilleterrain::affichegrille(QGraphicsScene* scene)
     {
         for (int j = 0; j < H/5; j++)
         {
+            tabterrain[i][j]->setOffset(i*5,j*5);
             tabterrain[i][j]->affichage(scene);
         }
     }
