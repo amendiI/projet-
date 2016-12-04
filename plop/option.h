@@ -1,5 +1,6 @@
 #ifndef OPTION_H
 #define OPTION_H
+#include "fct.h"
 
 //definition des resistance du terrain
 #define Resarbre 5
@@ -13,6 +14,9 @@
 #define nbrocher 5
 #define nbcrevasse 5
 #define nbeau 5
+
+//nombre de type de terrain
+#define nombreterrain
 
 //definitiond de la taille de l'écran
 #define W 1600

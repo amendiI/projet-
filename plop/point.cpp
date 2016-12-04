@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 Point::Point()
 {
 	x = 0;
