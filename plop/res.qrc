@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/IMG">
+        <file>crack1.png</file>
+        <file>default1.png</file>
+        <file>river1.png</file>
+        <file>rock1.png</file>
+        <file>tree1.png</file>
+    </qresource>
+</RCC>

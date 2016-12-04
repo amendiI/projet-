@@ -27,3 +27,6 @@ HEADERS  += \
     grilleterrain.h \
     fct.h
 
+RESOURCES += \
+    res.qrc
+

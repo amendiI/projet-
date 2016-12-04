@@ -2,17 +2,18 @@
 
 Grilleterrain::Grilleterrain()
 {
-    T[0].setterrain('n',0);
-    T[1].setterrain('a',1);
-    T[2].setterrain('r',1);
-    T[3].setterrain('c',false);
-    T[4].setterrain('e',1);
-    for(int i=0;i<W;i++)
+    T[0].setterrain('n',0,IMG_default);
+    T[1].setterrain('a',1,IMG_arbre);
+    T[2].setterrain('r',1,IMG_rocher);
+    T[3].setterrain('c',false,IMG_crevasse);
+    T[4].setterrain('e',1,IMG_eau);
+    for(int i=0;i<W/5;i++)
     {
-        for(int j=0;j<H;j++)
+        for(int j=0;j<H/5;j++)
         {
-            tabterrain[W][H]=&T[0];
-            tabresistance[W][H]=0;
+            tabterrain[i][j]=&T[0];
+            tabterrain[i][j]->setOffset(5*i,5*j);
+            tabresistance[i][j]=0;
         }
     }
 }
@@ -31,7 +32,10 @@ void Grilleterrain::creearbre(Point p)
             && i>0 && j>0
             && i<W && j<H	/*test si le carré ne deborde pas de l'ecran*/
             && &T[0]==tabterrain[i][j])/*test si la case est nulle*/
+            {
                 tabterrain[i][j]=&T[1];
+                tabresistance[i][j]=1;
+            }
         }
     }
 }
@@ -124,8 +128,23 @@ void Grilleterrain::creerocher(Point p)
             destr=node->getVal();
             ttmp[destr.getx()][destr.gety()]=0;
             tabterrain[i][j]=&T[2];
+            tabresistance[i][j]=7;
 
         }
     }
 */
+}
+
+
+//affichage
+
+void Grilleterrain::affichegrille(QGraphicsScene* scene)
+{
+    for (int i = 0; i < W/5; i++)
+    {
+        for (int j = 0; j < H/5; j++)
+        {
+            tabterrain[i][j]->affichage(scene);
+        }
+    }
 }

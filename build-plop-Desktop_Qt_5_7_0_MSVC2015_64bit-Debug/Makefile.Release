@@ -281,16 +281,27 @@ release\main.obj: ..\plop\main.cpp C:\Qt\5.7\msvc2015_64\include\QtWidgets\QAppl
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.7\msvc2015_64\include\QtGui\qicon.h \
 		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QWidget \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGraphicsScene \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgraphicsscene.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGraphicsView \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgraphicsview.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpainter.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtextoption.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qframe.h \
 		../plop/terrain.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QObject \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QRect \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGraphicsPixmapItem \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgraphicsitem.h \
 		../plop/Point.h \
 		../plop/option.h \
 		../plop/fct.h \
 		..\plop\Liste.h
 
 release\terrain.obj: ..\plop\terrain.cpp ../plop/terrain.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QObject \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGraphicsScene \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgraphicsscene.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qobject.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qobjectdefs.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qnamespace.h \
@@ -338,11 +349,44 @@ release\terrain.obj: ..\plop\terrain.cpp ../plop/terrain.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qvarlengtharray.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qcontainerfwd.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qobject_impl.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QRect \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qpoint.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qrect.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qmargins.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qsize.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qpoint.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qbrush.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qvector.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qcolor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qrgb.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qrgba64.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qmatrix.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpolygon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qregion.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qdatastream.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qline.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtransform.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpainterpath.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qimage.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpixelformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qhash.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qfont.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGraphicsPixmapItem \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgraphicsitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qvariant.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qmap.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qdebug.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qtextstream.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qlocale.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qset.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
 		../plop/Point.h \
 		../plop/option.h \
 		../plop/fct.h \
@@ -355,7 +399,8 @@ release\liste.obj: ..\plop\liste.cpp ../plop/liste.h
 release\grilleterrain.obj: ..\plop\grilleterrain.cpp ../plop/grilleterrain.h \
 		..\plop\point.h \
 		../plop/terrain.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QObject \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGraphicsScene \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgraphicsscene.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qobject.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qobjectdefs.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qnamespace.h \
@@ -403,11 +448,44 @@ release\grilleterrain.obj: ..\plop\grilleterrain.cpp ../plop/grilleterrain.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qvarlengtharray.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qcontainerfwd.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qobject_impl.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\QRect \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qpoint.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qrect.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qmargins.h \
 		C:\Qt\5.7\msvc2015_64\include\QtCore\qsize.h \
-		C:\Qt\5.7\msvc2015_64\include\QtCore\qpoint.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qbrush.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qvector.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qcolor.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qrgb.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qrgba64.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qmatrix.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpolygon.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qregion.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindowdefs.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qwindowdefs_win.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qdatastream.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qiodevice.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qline.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qtransform.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpainterpath.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qimage.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpaintdevice.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpixelformat.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpixmap.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qshareddata.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qhash.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qsharedpointer_impl.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qfont.h \
+		C:\Qt\5.7\msvc2015_64\include\QtGui\qpen.h \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\QGraphicsPixmapItem \
+		C:\Qt\5.7\msvc2015_64\include\QtWidgets\qgraphicsitem.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qvariant.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qmap.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qdebug.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qtextstream.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qlocale.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qset.h \
+		C:\Qt\5.7\msvc2015_64\include\QtCore\qcontiguouscache.h \
 		../plop/Point.h \
 		../plop/option.h \
 		../plop/fct.h \

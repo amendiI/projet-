@@ -11,6 +11,8 @@ public:
     Grilleterrain();
     void creearbre(Point p);
     void creerocher(Point p);
+
+    void affichegrille(QGraphicsScene* scene);
 private:
     terrain* tabterrain[W][H];
     int tabresistance[W][H];
