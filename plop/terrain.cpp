@@ -4,26 +4,19 @@ terrain::terrain()
 {
     type='z';
     bloque=false;
-    setPixmap(QPixmap(":/IMG/river1.png"));
 }
 
- terrain::terrain(char t,bool b,char* image)
+ terrain::terrain(char t,bool b)
  {
      type=t;
      bloque=b;
-     setPixmap(QPixmap(image));
  }
 
 char terrain::gettype()         const{return type;}
 bool terrain::getbloque()       const{return bloque;}
-void terrain::setterrain(const char t,const bool b,const char* image)
+void terrain::setterrain(const char t,const bool b)
 {
     type=t;
     bloque=b;
-    setPixmap(QPixmap(image));
-}
 
-void terrain::affichage(QGraphicsScene* scene)
-{
-    scene->addItem(this);
 }

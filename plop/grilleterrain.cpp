@@ -1,19 +1,24 @@
 #include "grilleterrain.h"
 
+
+
 Grilleterrain::Grilleterrain()
 {
-    T[0].setterrain('n',0,IMG_default);
-    T[1].setterrain('a',1,IMG_arbre);
-    T[2].setterrain('r',1,IMG_rocher);
-    T[3].setterrain('c',false,IMG_crevasse);
-    T[4].setterrain('e',1,IMG_eau);
+    T[0].setterrain('n',0);
+    T[1].setterrain('a',1);
+    T[2].setterrain('r',1);
+    T[3].setterrain('c',false);
+    T[4].setterrain('e',1);
     for(int i=0;i<W/5;i++)
     {
         for(int j=0;j<H/5;j++)
         {
             tabterrain[i][j]=&T[0];
-            tabterrain[i][j]->setOffset(5*i,5*j);
             tabresistance[i][j]=0;
+
+            image[i][j]=new QGraphicsPixmapItem();
+            image[i][j]->setPixmap(QPixmap(IMG_default));
+            image[i][j]->setPixmap(QPixmap(IMG_crevasse));
         }
     }
 }
@@ -23,18 +28,24 @@ Grilleterrain::Grilleterrain()
 void Grilleterrain::creearbre(Point p)
 {
     int r=aleat(3,6);
+    cout<<"p.x="<<p.getx()<<endl;
+    cout<<"p.y="<<p.gety()<<endl;
+    cout<<"r= "<<r<<endl;
     int i,j;
-    for(i=p.getx()-r;i<2*r+1;i++)
+    for(i=p.getx()-r;i<p.getx()+r;i++)
     {
-        for(j=p.gety()-r;j<2*r+1;j++)
+        for(j=p.gety()-r;j<p.gety()+r;j++)
         {
-            if(i*i+j*j-r*r<=0	/*test si le carré est dans le cercle*/
+            cout<<(i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())+r*r<<endl;
+            if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())+r*r<=0)	/*test si le carré est dans le cercle*/
             && i>0 && j>0
-            && i<W && j<H	/*test si le carré ne deborde pas de l'ecran*/
+            && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
             && &T[0]==tabterrain[i][j])/*test si la case est nulle*/
             {
+                cout<<"p="<<i<<" "<<j<<endl;
                 tabterrain[i][j]=&T[1];
                 tabresistance[i][j]=1;
+                image[i][j]->setPixmap(QPixmap(IMG_arbre));
             }
         }
     }
@@ -144,8 +155,8 @@ void Grilleterrain::affichegrille(QGraphicsScene* scene)
     {
         for (int j = 0; j < H/5; j++)
         {
-            tabterrain[i][j]->setOffset(i*5,j*5);
-            tabterrain[i][j]->affichage(scene);
+            image[i][j]->setOffset(i*5,j*5);
+            scene->addItem(image[i][j]);
         }
     }
 }

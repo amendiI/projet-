@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class terrain : public QGraphicsPixmapItem
+class terrain
 {
 private:
 
@@ -20,15 +20,12 @@ private:
     bool bloque;
 public:
     terrain();
-    terrain(char type,bool bloque,char* image);//constructeurs
+    terrain(char type,bool bloque);//constructeurs
 
     char gettype() const;//retourne le type
     bool getbloque() const;//renvoi 1 si le terrain est bloquant
 
-    void setterrain(const char t,const bool b,const char* image);//setter
-
-    void affichage(QGraphicsScene* scene);
-
+    void setterrain(const char t,const bool b);//setter
 };
 
 #endif // TERRAIN_H

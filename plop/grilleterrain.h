@@ -14,8 +14,9 @@ public:
 
     void affichegrille(QGraphicsScene* scene);
 private:
-    terrain* tabterrain[W][H];
-    int tabresistance[W][H];
+    terrain* tabterrain[W/5][H/5];
+    int tabresistance[W/5][H/5];
+    QGraphicsPixmapItem* image[W/5][H/5];
     terrain T[5];
 };
 

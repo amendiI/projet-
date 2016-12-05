@@ -53,5 +53,5 @@ void Point::setx(int v)
 }
 void Point::sety(int v)
 {
-	x=v;
+        y=v;
 }
