@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     Point.cpp \
     liste.cpp \
     grilleterrain.cpp \
-    fct.cpp
+    fct.cpp \
+    segment.cpp
 
 HEADERS  += \
     terrain.h \
@@ -25,7 +26,8 @@ HEADERS  += \
     Point.h \
     liste.h \
     grilleterrain.h \
-    fct.h
+    fct.h \
+    segment.h
 
 RESOURCES += \
     res.qrc

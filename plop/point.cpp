@@ -45,7 +45,6 @@ void Point::cloner(const Point& p)
 
 Point::~Point()
 {
-	cout << "vous avez fait mourrir un point de coordonee"<<x<<","<<y << endl;
 }
 void Point::setx(int v)
 {

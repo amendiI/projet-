@@ -23,19 +23,21 @@ int main(int argc,char** argv)
     QGraphicsScene* scene= new QGraphicsScene();
     QGraphicsView* vue= new QGraphicsView(scene);
 
-    Grilleterrain* grille= new Grilleterrain();
+    Grilleterrain* grille= new Grilleterrain(scene);
 
     Point p;
-    p.setx(20);
-    p.sety(20);
-    grille->creearbre(p);
-    grille->affichegrille(scene);
+    for(int i=0;i<20;i++)
+    {
+        p.setx(aleat(W/5));
+        p.sety(aleat(H/5));
+        grille->creearbre(p);
+}
 
 
 
     vue->show();
-    vue->setFixedSize(W,H);
-    scene->setSceneRect(0,0,W,H);
+    //vue->setFixedSize(W,H);
+    //scene->setSceneRect(0,0,W,H);
 
     return a.exec();
 }
