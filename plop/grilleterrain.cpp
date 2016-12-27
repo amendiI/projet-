@@ -17,6 +17,10 @@ Grilleterrain::Grilleterrain(QGraphicsScene* scene)
 }
 
 //generation du terrain
+//elle se base sur des cercles et l'equation (x-a)²+(y-b)²=r²
+//le cercles sont positionné de façon plus ou moins aléatoire en fonction
+//du terrain voulu.beaucoup de constantes dans ces fonctions sont utilisé
+//pour faire un terrain esthétique.
 
 void Grilleterrain::creearbre(Point p)
 {
@@ -37,33 +41,66 @@ void Grilleterrain::creearbre(Point p)
     }
 }
 
-// attention le carré généré par p doit etre entierement dans le terrain
-//a modifier
 void Grilleterrain::creerocher(Point p)
 {
+    int r=aleat(3,7);
+    int i,j;
+    for(i=p.getx()-r;i<p.getx()+r;i++)
+    {
+        for(j=p.gety()-r;j<p.gety()+r;j++)
+        {
+            if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
+            && i>0 && j>0
+            && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
+            && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
+            {
+                tabterrain[i][j]->setterrain('r',false,7,IMG_rocher);
+            }
+        }
+    }
+    //second cercle pour faire un rocher en patatoïde
+    p.setx(p.getx()+aleat(r*2)-5);
+    p.sety(p.gety()+(aleat(r*2)-5));
+    r=aleat(2,7);
 
+    for(i=p.getx()-r;i<p.getx()+r;i++)
+    {
+        for(j=p.gety()-r;j<p.gety()+r;j++)
+        {
+            if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
+            && i>0 && j>0
+            && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
+            && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
+            {
+                tabterrain[i][j]->setterrain('r',false,7,IMG_rocher);
+            }
+        }
+    }
 }
 
 void Grilleterrain::creeriviere()
 {
     Point p;
-    int direction;
     p.setx(aleat(W/5));
     p.sety(0);
+    int r=8;
 
-    for(int i=0;i<aleat(30,100);i++)
+    for(int k=0;k<20;k++)
     {
-        direction=aleat(2);
-        for(int j=0;j<5;j++)
+        for(int i=p.getx()-r;i<p.getx()+r;i++)
         {
-            if(direction)
+            for(int j=p.gety()-r;j<p.gety()+r;j++)
             {
-
-            }
-            else
-            {
-
+                if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
+                && i>0 && j>0
+                && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
+                && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
+                {
+                    tabterrain[i][j]->setterrain('r',false,1,IMG_eau);
+                }
             }
         }
+        p.sety(p.gety()+r/2);
+        p.setx(p.getx()+aleat(r*2)-r);
     }
 }

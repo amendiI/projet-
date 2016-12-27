@@ -26,12 +26,21 @@ int main(int argc,char** argv)
     Grilleterrain* grille= new Grilleterrain(scene);
 
     Point p;
-    for(int i=0;i<20;i++)
+
+    grille->creeriviere();
+
+    for(int i=0;i<50;i++)
     {
         p.setx(aleat(W/5));
         p.sety(aleat(H/5));
         grille->creearbre(p);
-}
+    }
+    for(int i=0;i<30;i++)
+    {
+        p.setx(aleat(W/5));
+        p.sety(aleat(H/5));
+        grille->creerocher(p);
+    }
 
 
 

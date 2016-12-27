@@ -23,7 +23,7 @@
 #define IMG_eau ":/images/river1.png"
 
 //definitiond de la taille de l'écran
-#define W 1080
-#define H 720
+#define W 1600
+#define H 800
 
 #endif // OPTION_H
