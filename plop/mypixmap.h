@@ -13,7 +13,7 @@
 class MyPixmap : public QGraphicsPixmapItem
 {
 private:
-    int angle;
+    int angle=0;
 public:
     void keyPressEvent(QKeyEvent* event);
 };

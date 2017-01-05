@@ -14,20 +14,13 @@
 
 #include "option.h"
 #include "Point.h"
-<<<<<<< HEAD
 #include "mypixmap.h"
-class Tank//:public QGraphicsPixmapItem
-=======
-using namespace std;
 
-//hérite de Qwidget pour le focus
-class Tank:public QGraphicsPixmapItem
->>>>>>> origin/master
+class Tank
 {
 private:
     MyPixmap  spriteCaisse;
     QGraphicsPixmapItem spriteTourelle;
-    int angle;
     int obus2;
     int obus3;
     int pv;

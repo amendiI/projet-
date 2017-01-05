@@ -61,19 +61,8 @@ int main(int argc,char** argv)
 
     p.setx(100);
     p.sety(100);
-<<<<<<< HEAD
+
     tank->deplacement();
-=======
-    tank->deplacement(p);
-    tank->setFlag(QGraphicsItem::ItemIsFocusable);
-
-    tank->setFocus();
-    cout<<"fin"<<endl;
-    cout<<tank->hasFocus()<<endl;
-
-    tank->setfocuscaisse();
-
     vue->setScene(scene);
->>>>>>> origin/master
     return a.exec();
 }
