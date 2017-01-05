@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     grilleterrain.cpp \
     fct.cpp \
     segment.cpp \
-    tank.cpp
+    tank.cpp \
+    hud.cpp
 
 HEADERS  += \
     terrain.h \
@@ -29,7 +30,8 @@ HEADERS  += \
     grilleterrain.h \
     fct.h \
     segment.h \
-    tank.h
+    tank.h \
+    hud.h
 
 RESOURCES += \
     res.qrc
