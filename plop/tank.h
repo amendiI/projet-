@@ -9,6 +9,7 @@
 #include <QKeyEvent>
 
 #include "option.h"
+#include "Point.h"
 
 class Tank//:public QGraphicsPixmapItem
 {
@@ -24,6 +25,11 @@ public:
     Tank();
     void keyPressEvent(QKeyEvent* event);
     void afficheTank(QGraphicsScene *scene);
+    void deplacement(Point p);
+
+    int getobus2();
+    int getobus3();
+
 };
 
 

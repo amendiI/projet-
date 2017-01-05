@@ -9,8 +9,8 @@ Tank::Tank()
     spriteCaisse.setShapeMode(QGraphicsPixmapItem::MaskShape);
     spriteTourelle.setShapeMode(QGraphicsPixmapItem::MaskShape);
 
-    spriteCaisse.setTransformOriginPoint(22,12);
-    spriteTourelle.setTransformOriginPoint(46,12);
+    spriteCaisse.setTransformOriginPoint(56,12);
+    spriteTourelle.setTransformOriginPoint(56,12);
 
     spriteCaisse.setFlag(QGraphicsItem::ItemIsFocusable);
     spriteTourelle.setFlag(QGraphicsItem::ItemIsFocusable);
@@ -126,4 +126,20 @@ void Tank::keyPressEvent(QKeyEvent *event)
     {
 
     }
+}
+
+void Tank::deplacement(Point p)
+{
+    spriteCaisse.setOffset(p.getx(),p.gety());
+    spriteTourelle.setOffset(p.getx(),p.gety());
+}
+
+int Tank::getobus2()
+{
+    return obus2;
+}
+
+int Tank::getobus3()
+{
+    return obus3;
 }
