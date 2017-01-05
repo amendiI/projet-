@@ -6,10 +6,10 @@ private:
     int y;
 
 public:
-	Point();
+    Point();
     Point(int xx, int yy);
-	Point(const Point& p);
-	~Point();
+    Point(const Point& p);
+    ~Point();
     int  getx() const ;
     int  gety() const ;
     void setx(int v);

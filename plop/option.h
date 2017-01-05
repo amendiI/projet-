@@ -24,7 +24,7 @@
 #define IMG_tank1 ":/images/Tank.png"
 
 //definitiond de la taille de l'écran
-#define W 1600
-#define H 800
+#define W 800
+#define H 600
 
 #endif // OPTION_H

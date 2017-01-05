@@ -12,7 +12,7 @@
 class Tourelle : public QGraphicsPixmapItem
 {
 private:
-    int angle=0;
+    int angle;
 public:
     void keyPressEvent(QKeyEvent* event);
 };

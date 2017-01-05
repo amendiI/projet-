@@ -2,31 +2,34 @@
 
 Tank::Tank()
 {
-    spriteCaisse.setPixmap(QPixmap(IMG_tank1));
-    spriteTourelle.setPixmap(QPixmap(":/images/Tourelle.png"));
+    caisse.setPixmap(QPixmap(IMG_tank1));
+    tourelle.setPixmap(QPixmap(":/images/Tourelle.png"));
 
-    spriteCaisse.setShapeMode(QGraphicsPixmapItem::MaskShape);
-    spriteTourelle.setShapeMode(QGraphicsPixmapItem::MaskShape);
+    caisse.setShapeMode(QGraphicsPixmapItem::MaskShape);
+    tourelle.setShapeMode(QGraphicsPixmapItem::MaskShape);
 
-    spriteCaisse.setTransformOriginPoint(22,12);
-    spriteTourelle.setTransformOriginPoint(46,12);
+    caisse.setTransformOriginPoint(22,12);
+    tourelle.setTransformOriginPoint(46,12);
 
-    spriteCaisse.setFlag(QGraphicsItem::ItemIsFocusable);
-    spriteTourelle.setFlag(QGraphicsItem::ItemIsFocusable);
+    caisse.setFlag(QGraphicsItem::ItemIsFocusable);
+    tourelle.setFlag(QGraphicsItem::ItemIsFocusable);
+
+    caisse.setAngle(0);
+    caisse.setPm(W/50);
 
 }
 
 void Tank::afficheTank(QGraphicsScene* scene)
 {
-    scene->addItem(&spriteCaisse);
-    scene->addItem(&spriteTourelle);
+    scene->addItem(&caisse);
+    scene->addItem(&tourelle);
 }
 
 
 void Tank::deplacement()
 {
 
-    spriteCaisse.setFocus();
+    caisse.setFocus();
 }
 
 int Tank::getobus2()
