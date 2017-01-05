@@ -23,6 +23,9 @@ int main(int argc,char** argv)
     QGraphicsScene* scene= new QGraphicsScene();
     QGraphicsView* vue= new QGraphicsView(scene);
 
+    vue->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    vue->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
     Grilleterrain* grille= new Grilleterrain(scene);
 
     Point p;
