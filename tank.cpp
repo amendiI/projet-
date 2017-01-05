@@ -40,86 +40,86 @@ void Tank::keyPressEvent(QKeyEvent *event)
     {
         if(angle%8==0)
         {
-            this->spriteCaisse->setPos(x()+5,y());
-            this->spriteTourelle->setPos(x()+5,y());
+            this->spriteCaisse->setPos(this->spriteCaisse->x()+5,this->spriteCaisse->y());
+            this->spriteTourelle->setPos(this->spriteTourelle->x()+5,this->spriteTourelle->y());
         }
         else if(angle%8==1)
         {
-            this->spriteCaisse->setPos(x()+5,y()+5);
-            this->spriteTourelle->setPos(x()+5,y()+5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x()+5,this->spriteCaisse->y()+5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x()+5,this->spriteTourelle->y()+5);
         }
         else if(angle%8==2)
         {
-            this->spriteCaisse->setPos(x(),y()+5);
-            this->spriteTourelle->setPos(x(),y()+5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x(),this->spriteCaisse->y()+5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x(),this->spriteTourelle->y()+5);
         }
         else if(angle%8==3)
         {
-            this->spriteCaisse->setPos(x()-5,y()+5);
-            this->spriteTourelle->setPos(x()-5,y()+5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x()-5,this->spriteCaisse->y()+5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x()-5,this->spriteTourelle->y()+5);
         }
         else if(angle%8==4)
         {
-            this->spriteCaisse->setPos(x()-5,y());
-            this->spriteTourelle->setPos(x()-5,y());
+            this->spriteCaisse->setPos(this->spriteCaisse->x()-5,this->spriteCaisse->y());
+            this->spriteTourelle->setPos(this->spriteTourelle->x()-5,this->spriteTourelle->y());
         }
         else if(angle%8==5)
         {
-            this->spriteCaisse->setPos(x()-5,y()-5);
-            this->spriteTourelle->setPos(x()-5,y()-5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x()-5,this->spriteCaisse->y()-5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x()-5,this->spriteTourelle->y()-5);
         }
         else if(angle%8==6)
         {
-            this->spriteCaisse->setPos(x(),y()-5);
-            this->spriteTourelle->setPos(x(),y()-5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x(),this->spriteCaisse->y()-5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x(),this->spriteTourelle->y()-5);
         }
         else if(angle%8==7)
         {
-            this->spriteCaisse->setPos(x()+5,y()-5);
-            this->spriteTourelle->setPos(x()+5,y()-5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x()+5,this->spriteCaisse->y()-5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x()+5,this->spriteTourelle->y()-5);
         }
     }
     else   if(event->key() ==Qt::Key_S)
     {
         if(angle%8==0)
         {
-            this->spriteCaisse->setPos(x()-5,y());
-            this->spriteTourelle->setPos(x()-5,y());
+            this->spriteCaisse->setPos(this->spriteCaisse->x()-5,this->spriteCaisse->y());
+            this->spriteTourelle->setPos(this->spriteTourelle->x()-5,this->spriteTourelle->y());
         }
         else if(angle%8==1)
         {
-            this->spriteCaisse->setPos(x()-5,y()-5);
-            this->spriteTourelle->setPos(x()-5,y()-5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x()-5,this->spriteCaisse->y()-5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x()-5,this->spriteTourelle->y()-5);
         }
         else if(angle%8==2)
         {
-            this->spriteCaisse->setPos(x(),y()-5);
-            this->spriteTourelle->setPos(x(),y()-5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x(),this->spriteCaisse->y()-5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x(),this->spriteTourelle->y()-5);
         }
         else if(angle%8==3)
         {
-            this->spriteCaisse->setPos(x()+5,y()-5);
-            this->spriteTourelle->setPos(x()+5,y()-5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x()+5,this->spriteCaisse->y()-5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x()+5,this->spriteTourelle->y()-5);
         }
         else if(angle%8==4)
         {
-            this->spriteCaisse->setPos(x()+5,y());
-            this->spriteTourelle->setPos(x()+5,y());
+            this->spriteCaisse->setPos(this->spriteCaisse->x()+5,this->spriteCaisse->y());
+            this->spriteTourelle->setPos(this->spriteTourelle->x()+5,this->spriteTourelle->y());
         }
         else if(angle%8==5)
         {
-            this->spriteCaisse->setPos(x()+5,y()+5);
-            this->spriteTourelle->setPos(x()+5,y()+5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x()+5,this->spriteCaisse->y()+5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x()+5,this->spriteTourelle->y()+5);
         }
         else if(angle%8==6)
         {
-            this->spriteCaisse->setPos(x(),y()+5);
-            this->spriteTourelle->setPos(x(),y()+5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x(),this->spriteCaisse->y()+5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x(),this->spriteTourelle->y()+5);
         }
         else if(angle%8==7)
         {
-            this->spriteCaisse->setPos(x()-5,y()+5);
-            this->spriteTourelle->setPos(x()-5,y()+5);
+            this->spriteCaisse->setPos(this->spriteCaisse->x()-5,this->spriteCaisse->y()+5);
+            this->spriteTourelle->setPos(this->spriteTourelle->x()-5,this->spriteTourelle->y()+5);
         }
     }
     else   if(event->key() ==Qt::Key_Space)
