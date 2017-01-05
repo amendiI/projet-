@@ -51,7 +51,7 @@ int main(int argc,char** argv)
     }
     Tank* tank = new Tank();
 
-    //tank->afficheTank(scene);
+    tank->afficheTank(scene);
     //vue->setScene(scene);
 
 

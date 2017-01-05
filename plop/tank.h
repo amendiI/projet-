@@ -13,8 +13,8 @@
 class Tank//:public QGraphicsPixmapItem
 {
 private:
-    QGraphicsPixmapItem * spriteCaisse;
-    QGraphicsPixmapItem * spriteTourelle;
+    QGraphicsPixmapItem  spriteCaisse;
+    QGraphicsPixmapItem  spriteTourelle;
     int angle;
     int obus2;
     int obus3;
