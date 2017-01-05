@@ -32,17 +32,23 @@ int main(int argc,char** argv)
 
     grille->creeriviere();
 
-    for(int i=0;i<50;i++)
+    for(int i=0;i<40;i++)
     {
         p.setx(aleat(W/5));
         p.sety(aleat(H/5));
         grille->creearbre(p);
     }
-    for(int i=0;i<30;i++)
+    for(int i=0;i<20;i++)
     {
         p.setx(aleat(W/5));
         p.sety(aleat(H/5));
         grille->creerocher(p);
+    }
+    for(int i=0;i<20;i++)
+    {
+        p.setx(aleat(W/5));
+        p.sety(aleat(H/5));
+        grille->creecrevasse(p);
     }
 
 

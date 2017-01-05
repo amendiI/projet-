@@ -104,3 +104,23 @@ void Grilleterrain::creeriviere()
         p.setx(p.getx()+aleat(r*2)-r);
     }
 }
+
+void Grilleterrain::creecrevasse(Point p)
+{
+    int r=aleat(4,7);
+    int i,j;
+    for(i=p.getx()-r;i<p.getx()+r;i++)
+    {
+        for(j=p.gety()-r;j<p.gety()+r;j++)
+        {
+            if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
+            && i>0 && j>0
+            && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
+            && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
+            {
+                tabterrain[i][j]->setterrain('a',false,1,IMG_crevasse);
+            }
+        }
+    }
+
+}
