@@ -5,5 +5,7 @@
         <file>river1.png</file>
         <file>rock1.png</file>
         <file>tree1.png</file>
+        <file>Tank.png</file>
+        <file>Tourelle.png</file>
     </qresource>
 </RCC>

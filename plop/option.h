@@ -21,6 +21,7 @@
 #define IMG_rocher ":/images/rock1.png"
 #define IMG_crevasse ":/images/crack1.png"
 #define IMG_eau ":/images/river1.png"
+#define IMG_tank1 ":/images/Tank.png"
 
 //definitiond de la taille de l'écran
 #define W 1600
