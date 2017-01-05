@@ -52,15 +52,24 @@ int main(int argc,char** argv)
     Tank* tank = new Tank();
 
     tank->afficheTank(scene);
-    vue->setScene(scene);
+
 
 
     vue->show();
-    vue->setFixedSize(W,H);
+    //vue->setFixedSize(W,H);
     scene->setSceneRect(0,0,W,H);
 
     p.setx(100);
     p.sety(100);
     tank->deplacement(p);
+    tank->setFlag(QGraphicsItem::ItemIsFocusable);
+
+    tank->setFocus();
+    cout<<"fin"<<endl;
+    cout<<tank->hasFocus()<<endl;
+
+    tank->setfocuscaisse();
+
+    vue->setScene(scene);
     return a.exec();
 }

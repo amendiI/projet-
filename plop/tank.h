@@ -7,11 +7,17 @@
 #include <QGraphicsItem>
 #include <QGraphicsPixmapItem>
 #include <QKeyEvent>
+#include <QWidget>
+
+
+#include <iostream>
 
 #include "option.h"
 #include "Point.h"
+using namespace std;
 
-class Tank//:public QGraphicsPixmapItem
+//hérite de Qwidget pour le focus
+class Tank:public QGraphicsPixmapItem
 {
 private:
     QGraphicsPixmapItem  spriteCaisse;
@@ -29,6 +35,9 @@ public:
 
     int getobus2();
     int getobus3();
+
+    void setfocuscaisse();
+    void setfocustourelle();
 
 };
 
