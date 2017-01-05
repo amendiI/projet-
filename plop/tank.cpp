@@ -38,13 +38,3 @@ int Tank::getobus3()
 {
     return obus3;
 }
-
-void Tank::setfocuscaisse()
-{
-    spriteCaisse.setFocus();
-}
-
-void Tank::setfocustourelle()
-{
-    spriteTourelle.setFocus();
-}

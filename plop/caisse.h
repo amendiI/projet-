@@ -1,5 +1,5 @@
-#ifndef MYPIXMAP_H
-#define MYPIXMAP_H
+#ifndef CAISSE_H
+#define CAISSE_H
 #include <QApplication>
 #include <QGraphicsScene>
 #include <QGraphicsView>
@@ -9,12 +9,15 @@
 
 #include "option.h"
 #include "Point.h"
+#include "tourelle.h"
 
-class MyPixmap : public QGraphicsPixmapItem
+class Caisse : public QGraphicsPixmapItem
 {
 private:
     int angle=0;
 public:
+    //void keyPressEvent(QKeyEvent* event,Tourelle t);
     void keyPressEvent(QKeyEvent* event);
 };
-#endif // MYPIXMAP_H
+
+#endif // CAISSE_H

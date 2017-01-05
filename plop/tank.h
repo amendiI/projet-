@@ -14,13 +14,14 @@
 
 #include "option.h"
 #include "Point.h"
-#include "mypixmap.h"
+#include "caisse.h"
+#include "tourelle.h"
 
 class Tank
 {
 private:
-    MyPixmap  spriteCaisse;
-    QGraphicsPixmapItem spriteTourelle;
+    Caisse spriteCaisse;
+    Tourelle spriteTourelle;
     int obus2;
     int obus3;
     int pv;

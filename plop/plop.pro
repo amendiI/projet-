@@ -20,7 +20,9 @@ SOURCES += main.cpp\
     segment.cpp \
     tank.cpp \
     hud.cpp \
-    mypixmap.cpp
+    mypixmap.cpp \
+    caisse.cpp \
+    tourelle.cpp
 
 HEADERS  += \
     terrain.h \
@@ -31,7 +33,8 @@ HEADERS  += \
     segment.h \
     tank.h \
     hud.h \
-    mypixmap.h
+    caisse.h \
+    tourelle.h
 
 RESOURCES += \
     res.qrc

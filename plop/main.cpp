@@ -59,9 +59,6 @@ int main(int argc,char** argv)
     //vue->setFixedSize(W,H);
     scene->setSceneRect(0,0,W,H);
 
-    p.setx(100);
-    p.sety(100);
-
     tank->deplacement();
     vue->setScene(scene);
     return a.exec();
