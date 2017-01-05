@@ -10,12 +10,12 @@
 
 #include "option.h"
 #include "Point.h"
-
+#include "mypixmap.h"
 class Tank//:public QGraphicsPixmapItem
 {
 private:
-    QGraphicsPixmapItem  spriteCaisse;
-    QGraphicsPixmapItem  spriteTourelle;
+    MyPixmap  spriteCaisse;
+    QGraphicsPixmapItem spriteTourelle;
     int angle;
     int obus2;
     int obus3;
@@ -23,9 +23,8 @@ private:
 
 public:
     Tank();
-    void keyPressEvent(QKeyEvent* event);
     void afficheTank(QGraphicsScene *scene);
-    void deplacement(Point p);
+    void deplacement();
 
     int getobus2();
     int getobus3();

@@ -61,6 +61,6 @@ int main(int argc,char** argv)
 
     p.setx(100);
     p.sety(100);
-    tank->deplacement(p);
+    tank->deplacement();
     return a.exec();
 }

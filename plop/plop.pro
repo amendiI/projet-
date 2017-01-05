@@ -15,23 +15,23 @@ TEMPLATE = app
 SOURCES += main.cpp\
         terrain.cpp \
     Point.cpp \
-    liste.cpp \
     grilleterrain.cpp \
     fct.cpp \
     segment.cpp \
     tank.cpp \
-    hud.cpp
+    hud.cpp \
+    mypixmap.cpp
 
 HEADERS  += \
     terrain.h \
     option.h \
     Point.h \
-    liste.h \
     grilleterrain.h \
     fct.h \
     segment.h \
     tank.h \
-    hud.h
+    hud.h \
+    mypixmap.h
 
 RESOURCES += \
     res.qrc

@@ -11,14 +11,11 @@ class Hud
 private:
     QGraphicsRectItem barre;
     QGraphicsTextItem aff_pv;
-    QGraphicsTextItem aff_obus1;
     QGraphicsTextItem aff_obus2;
     QGraphicsTextItem aff_obus3;
 
 public:
     Hud();
-
-
-}
+};
 
 #endif // HUD_H
