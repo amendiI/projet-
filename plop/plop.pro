@@ -34,7 +34,8 @@ HEADERS  += \
     tank.h \
     hud.h \
     caisse.h \
-    tourelle.h
+    tourelle.h \
+    mypixmap.h
 
 RESOURCES += \
     res.qrc

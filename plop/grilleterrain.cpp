@@ -16,6 +16,33 @@ Grilleterrain::Grilleterrain(QGraphicsScene* scene)
     }
 }
 
+void Grilleterrain::initterrain()
+{
+    Point p;
+
+    creeriviere();
+
+    for(int i=0;i<30;i++)
+    {
+        p.setx(aleat(W/5));
+        p.sety(aleat(H/5));
+        creearbre(p);
+    }
+    for(int i=0;i<20;i++)
+    {
+        p.setx(aleat(W/5));
+        p.sety(aleat(H/5));
+        creerocher(p);
+    }
+    for(int i=0;i<10;i++)
+    {
+        p.setx(aleat(W/5));
+        p.sety(aleat(H/5));
+        creecrevasse(p);
+    }
+}
+
+
 //generation du terrain
 //elle se base sur des cercles et l'equation (x-a)²+(y-b)²=r²
 //le cercles sont positionné de façon plus ou moins aléatoire en fonction

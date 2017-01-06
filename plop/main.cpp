@@ -26,29 +26,8 @@ int main(int argc,char** argv)
     vue->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     vue->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     Grilleterrain* grille= new Grilleterrain(scene);
+    grille->initterrain();
 
-    Point p;
-
-    grille->creeriviere();
-
-    for(int i=0;i<30;i++)
-    {
-        p.setx(aleat(W/5));
-        p.sety(aleat(H/5));
-        grille->creearbre(p);
-    }
-    for(int i=0;i<20;i++)
-    {
-        p.setx(aleat(W/5));
-        p.sety(aleat(H/5));
-        grille->creerocher(p);
-    }
-    for(int i=0;i<10;i++)
-    {
-        p.setx(aleat(W/5));
-        p.sety(aleat(H/5));
-        grille->creecrevasse(p);
-    }
     Tank* tank = new Tank();
 
     tank->afficheTank(scene);
@@ -56,7 +35,7 @@ int main(int argc,char** argv)
 
 
     vue->show();
-    //vue->setFixedSize(W,H);
+    vue->setFixedSize(W,H);
     scene->setSceneRect(0,0,W,H);
 
     tank->deplacement();

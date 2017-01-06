@@ -10,6 +10,8 @@ class Grilleterrain
 {
 public:
     Grilleterrain(QGraphicsScene* scene);
+    void initterrain();
+
     void creearbre(Point p);
     void creerocher(Point p);
     void creeriviere();
