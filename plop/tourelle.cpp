@@ -9,6 +9,7 @@ Tourelle::Tourelle()
     setShapeMode(QGraphicsPixmapItem::MaskShape);
     setTransformOriginPoint(46,12);
     setFlag(QGraphicsItem::ItemIsFocusable);
+    angle_canon=0;
 }
 
 void Tourelle::keyPressEvent(QKeyEvent *event)
@@ -24,10 +25,12 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
     else if(event->key() ==Qt::Key_Z)
         {
             if(angle_canon<90)angle_canon++;
+            cout << angle_canon << endl;
         }
     else if(event->key() ==Qt::Key_S)
         {
             if(angle_canon>0)angle_canon--;
+            cout << angle_canon << endl;
         }
     switch (angle_canon/10)
     {
