@@ -1,7 +1,4 @@
 #include "tourelle.h"
-#include <iostream>
-
-using namespace std;
 
 Tourelle::Tourelle()
 {
@@ -25,12 +22,10 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
     else if(event->key() ==Qt::Key_Z)
         {
             if(angle_canon<90)angle_canon++;
-            cout << angle_canon << endl;
         }
     else if(event->key() ==Qt::Key_S)
         {
             if(angle_canon>0)angle_canon--;
-            cout << angle_canon << endl;
         }
     switch (angle_canon/10)
     {

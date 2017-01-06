@@ -116,10 +116,10 @@ void Caisse::keyPressEvent(QKeyEvent *event)
             }
             pm--;
         }
-        else if(event->key() ==Qt::Key_Space)
-        {
-            clearFocus();
-            tourelle->setFocus();
-        }
+    }
+    else if(event->key() ==Qt::Key_Space || pm==0)
+    {
+        clearFocus();
+        tourelle->setFocus();
     }
 }
