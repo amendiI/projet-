@@ -39,3 +39,5 @@ HEADERS  += \
 RESOURCES += \
     res.qrc
 
+DISTFILES +=
+

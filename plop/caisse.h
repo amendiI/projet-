@@ -14,13 +14,17 @@
 class Caisse : public QGraphicsPixmapItem
 {
 private:
+    Tourelle* tourelle;
     int angle;
     int pm;
 public:
-//  void keyPressEvent(QKeyEvent* event,Tourelle t);
+    Caisse();
+    void deplacement();
     void keyPressEvent(QKeyEvent* event);
     void setAngle(int x){angle=x;}
     void setPm(int x){pm=x;}
+    Tourelle* getTourelle(){return tourelle;}
+    int getPm(){return pm;}
 };
 
 #endif // CAISSE_H

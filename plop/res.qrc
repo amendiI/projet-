@@ -7,5 +7,15 @@
         <file>tree1.png</file>
         <file>Tank.png</file>
         <file>Tourelle.png</file>
+        <file>tankentier.png</file>
+        <file>Tourelle10.png</file>
+        <file>Tourelle20.png</file>
+        <file>Tourelle30.png</file>
+        <file>Tourelle40.png</file>
+        <file>Tourelle50.png</file>
+        <file>Tourelle60.png</file>
+        <file>Tourelle70.png</file>
+        <file>Tourelle80.png</file>
+        <file>Tourelle90.png</file>
     </qresource>
 </RCC>

@@ -20,8 +20,8 @@
 class Tank
 {
 private:
-    Caisse caisse;
-    Tourelle tourelle;
+    Caisse *caisse;
+    Tourelle *tourelle;
     int obus2;
     int obus3;
     int pv;
@@ -29,6 +29,7 @@ private:
 public:
     Tank();
     void afficheTank(QGraphicsScene *scene);
+    void visee();
     void deplacement();
     int getobus2();
     int getobus3();
