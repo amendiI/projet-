@@ -23,13 +23,14 @@ int main(int argc,char** argv)
     QApplication a(argc,argv);
     QGraphicsScene* scene= new QGraphicsScene();
     QGraphicsView* vue= new QGraphicsView(scene);
+    Grilleterrain* grille= new Grilleterrain(scene);
+
     vue->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     vue->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    Grilleterrain* grille= new Grilleterrain(scene);
+
     grille->initterrain();
 
     Tank* tank = new Tank();
-
     tank->afficheTank(scene);
 
 

@@ -25,6 +25,7 @@ public:
     void setPm(int x){pm=x;}
     Tourelle* getTourelle(){return tourelle;}
     int getPm(){return pm;}
+    int getangle(){return angle;}
 };
 
 #endif // CAISSE_H

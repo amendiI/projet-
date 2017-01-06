@@ -35,7 +35,8 @@ HEADERS  += \
     hud.h \
     caisse.h \
     tourelle.h \
-    mypixmap.h
+    mypixmap.h \
+    hitbox.h
 
 RESOURCES += \
     res.qrc

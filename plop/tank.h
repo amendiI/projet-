@@ -25,6 +25,8 @@ private:
     int obus2;
     int obus3;
     int pv;
+    Point centre;
+    //TODO marquer le centre
 
 public:
     Tank();
@@ -33,6 +35,7 @@ public:
     void deplacement();
     int getobus2();
     int getobus3();
+    bool hitbox(Point p);
 };
 
 
