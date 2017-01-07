@@ -23,7 +23,9 @@ int Tir::trajectoire()
     x=posinit.getx();
     y=posinit.gety();
 
-    while(posobus!=posarrive)
+    bool en_cours=true;
+
+    while(en_cours)
     {
 
     }
