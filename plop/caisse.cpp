@@ -11,6 +11,9 @@ Caisse::Caisse()
     setAngle(0);
     setPm(W/50);
     setPos(x()+25,y());
+    refMasque.setx(x());
+    refMasque.sety(y());
+
 }
 
 void Caisse::keyPressEvent(QKeyEvent *event)

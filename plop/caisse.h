@@ -17,15 +17,17 @@ private:
     Tourelle* tourelle;
     int angle;
     int pm;
+    Point refMasque;
 public:
     Caisse();
+    void verif
     void deplacement();
     void keyPressEvent(QKeyEvent* event);
     void setAngle(int x){angle=x;}
     void setPm(int x){pm=x;}
     Tourelle* getTourelle(){return tourelle;}
     int getPm(){return pm;}
-    int getangle(){return angle;}
+    int getAngle(){return angle;}
 };
 
 #endif // CAISSE_H

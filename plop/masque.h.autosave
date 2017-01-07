@@ -1,0 +1,15 @@
+#ifndef MASQUE_H
+#define MASQUE_H
+#include <QGraphicsRectItem>
+#include <QKeyEvent>
+#include "tank.h"
+
+class Masque: public QGraphicsRectItem
+{
+    private:
+
+    public:
+    Masque(Caisse c,QKeyEvent* event);
+};
+
+#endif // MASQUE_H
