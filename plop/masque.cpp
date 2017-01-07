@@ -9,47 +9,39 @@ Masque::Masque(Caisse c)
     angle=c.getAngle();
 }
 
-bool Masque::peutBouger(QKeyEvent* event)
+bool Masque::peutBouger(int orientation)
 {
-    switch (event->key()) {
-    case Qt::Key_D:
-        setRotation(rotation()+45);
-        angle++;
+    x=refHitbox.getx();
+    y=refHitbox.gety();
+    switch((angle+orientation)%8)
+    {
+    case 0:
+        return !(hitbox(Point(hitx+9,hity))&&hitbox(Point(hitx+9,hity+1))&&hitbox(Point(hitx+9,hity+2))&&hitbox(Point(hitx+9,hity+3))&&hitbox(Point(hitx+9,hity+4)));
         break;
-    case Qt::Key_Q:
-        setRotation(rotation()-45);
-        angle--;
+    case 1:
+        return !(hitbox(Point(hitx+9,hity+4))&&hitbox(Point(hitx+9,hity+5))&&hitbox(Point(hitx+8,hity+5))&&hitbox(Point(hitx+8,hity+6))&&hitbox(Point(hitx+7,hity+6))&&hitbox(Point(hitx+7,hity+7))&&hitbox(Point(hitx+6,hity+7)));
         break;
-    case Qt::Key_Z:
-        switch (angle%8)
-        {
-        case 0:
-            setPos( x()+5, y());
-            break;
-        case 1:
-            setPos( x()+5, y()+5);
-            break;
-        case 2:
-            setPos( x(), y()+5);
-            break;
-        case 3:
-            setPos( x()-5, y()+5);
-            break;
-        case 4:
-            setPos( x()-5, y());
-            break;
-        case 5:
-            setPos( x()-5, y()-5);
-            break;
-        case 6:
-            setPos( x(), y()-5);
-            break;
-        case 7:
-            setPos( x()+5, y()-5);
-            break;
-        default:
-            break;
-        }
+    case 2:
+        return !(hitbox(Point(hitx+2,hity+7))&&hitbox(Point(hitx+3,hity+7))&&hitbox(Point(hitx+4,hity+7))&&hitbox(Point(hitx+5,hity+7))&&hitbox(Point(hitx+6,hity+7)));
+        break;
+    case 3:
+        return !(hitbox(Point(hitx+9,hity+4))&&hitbox(Point(hitx+9,hity+5))&&hitbox(Point(hitx+8,hity+5))&&hitbox(Point(hitx+8,hity+6))&&hitbox(Point(hitx+7,hity+6))&&hitbox(Point(hitx+7,hity+7))&&hitbox(Point(hitx+6,hity+7)));
+        break;
+    case 4:
+        return !(hitbox(Point(hitx-1,hity))&&hitbox(Point(hitx-1,hity+1))&&hitbox(Point(hitx-1,hity+2))&&hitbox(Point(hitx-1,hity+3))&&hitbox(Point(hitx-1,hity+4)));
+        break;
+    case 5:
+        setPos( x()-5, y()-5);
+        break;
+    case 6:
+        return !(hitbox(Point(hitx+2,hity-3))&&hitbox(Point(hitx+3,hity-3))&&hitbox(Point(hitx+4,hity-3))&&hitbox(Point(hitx+5,hity-3))&&hitbox(Point(hitx+6,hity-3)));
+        break;
+    case 7:
+        setPos( x()+5, y()-5);
+        break;
+    default:
+        break;
+    }
 
         break;
     case Qt::Key_S:
