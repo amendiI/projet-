@@ -20,7 +20,6 @@ SOURCES += main.cpp\
     segment.cpp \
     tank.cpp \
     hud.cpp \
-    mypixmap.cpp \
     caisse.cpp \
     tourelle.cpp \
     tir.cpp
@@ -36,7 +35,6 @@ HEADERS  += \
     hud.h \
     caisse.h \
     tourelle.h \
-    mypixmap.h \
     hitbox.h \
     tir.h
 
