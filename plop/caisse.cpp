@@ -1,5 +1,4 @@
 #include "caisse.h"
-#include "tourelle.h"
 
 Caisse::Caisse()
 {
@@ -11,39 +10,40 @@ Caisse::Caisse()
     setAngle(0);
     setPm(W/50);
     setPos(x()+25,y());
-    refHitbox.setx(x()/5);
-    refHitbox.sety(y()/5);
+    centre.setx(x()/5+4);
+    centre.sety(y()/5-2);
 
 }
 
-void Caisse::keyPressEvent(QKeyEvent *event)
+void Caisse::keyPressEvent(QKeyEvent *event,Grilleterrain tab)
 {
+    int cx=centre.getx();
+    int cy=centre.gety();
+    Caisse* c=new Caisse();
 
     if(pm>0)
     {
-        if(angle<0)
+        if(angle<0){angle=angle+8;}//pour que le modulo ne calcul pas des negatifs
+        if(event->key() ==Qt::Key_D )
         {
-            angle=angle+8;
+            c->setRotation(rotation()+45);
+            c->tourelle->setRotation(tourelle->rotation()+45);
+            c->setAngle(angle+1);
         }
-        if(event->key() ==Qt::Key_D && peutBouger(1))
-        {
-            setRotation(rotation()+45);
-            tourelle->setRotation(tourelle->rotation()+45);
-            angle++;
-        }
-        else if(event->key() ==Qt::Key_Q && peutBouger(-1))
+        else if(event->key() ==Qt::Key_Q )
         {
            setRotation(rotation()-45);
            tourelle->setRotation(tourelle->rotation()-45);
            angle--;
         }
-        else if(event->key() ==Qt::Key_Z && peutBouger(0))
+        else if(event->key() ==Qt::Key_Z )
         {
             switch (angle%8)
             {
             case 0:
                 setPos( x()+5, y());
                 tourelle->setPos( tourelle->x()+5, tourelle->y());
+                centre.setx(cx+5);
                 break;
             case 1:
                 setPos( x()+5, y()+5);
@@ -78,7 +78,7 @@ void Caisse::keyPressEvent(QKeyEvent *event)
             }
             pm--;
         }
-        else if(event->key() ==Qt::Key_S && peutBouger(4))
+        else if(event->key() ==Qt::Key_S)
         {
             switch (angle%8)
             {
@@ -119,8 +119,10 @@ void Caisse::keyPressEvent(QKeyEvent *event)
             }
             pm--;
         }
-        refHitbox.setx(x()/5);
-        refHitbox.sety(y()/5);
+        if(c->peutBouger(tab))
+        {
+            prendpos(c);
+        }
     }
     else if(event->key() ==Qt::Key_Space || pm==0)
     {
@@ -129,46 +131,28 @@ void Caisse::keyPressEvent(QKeyEvent *event)
     }
 }
 
-bool Caisse::peutBouger(int orientation)
+bool Caisse::peutBouger(Grilleterrain tab)
 {
-    int hitx=refHitbox.getx();
-    int hity=refHitbox.gety();
-    switch((angle+orientation)%8)
+    int x=centre.getx();
+    int y=centre.gety();
+    x-=-4;
+    y-=-4;
+
+    for(int i=0;i<9;i++)
     {
-    case 0:
-        return !(hitbox(Point(hitx+9,hity))&&hitbox(Point(hitx+9,hity+1))&&hitbox(Point(hitx+9,hity+2))&&hitbox(Point(hitx+9,hity+3))&&hitbox(Point(hitx+9,hity+4)));
-        break;
-    case 1:
-        return !(hitbox(Point(hitx+9,hity+4))&&hitbox(Point(hitx+9,hity+5))&&hitbox(Point(hitx+8,hity+5))&&hitbox(Point(hitx+8,hity+6))&&hitbox(Point(hitx+7,hity+6))&&hitbox(Point(hitx+7,hity+7))&&hitbox(Point(hitx+6,hity+7)));
-        break;
-    case 2:
-        return !(hitbox(Point(hitx+2,hity+7))&&hitbox(Point(hitx+3,hity+7))&&hitbox(Point(hitx+4,hity+7))&&hitbox(Point(hitx+5,hity+7))&&hitbox(Point(hitx+6,hity+7)));
-        break;
-    case 3:
-        return !(hitbox(Point(hitx-1,hity+4))&&hitbox(Point(hitx-1,hity+5))&&hitbox(Point(hitx,hity+5))&&hitbox(Point(hitx,hity+6))&&hitbox(Point(hitx+1,hity+6))&&hitbox(Point(hitx+1,hity+7))&&hitbox(Point(hitx+2,hity+7)));
-        break;
-    case 4:
-        return !(hitbox(Point(hitx-1,hity))&&hitbox(Point(hitx-1,hity+1))&&hitbox(Point(hitx-1,hity+2))&&hitbox(Point(hitx-1,hity+3))&&hitbox(Point(hitx-1,hity+4)));
-        break;
-    case 5:
-        return !(hitbox(Point(hitx-1,hity))&&hitbox(Point(hitx-1,hity-1))&&hitbox(Point(hitx,hity-1))&&hitbox(Point(hitx,hity-2))&&hitbox(Point(hitx+1,hity-2))&&hitbox(Point(hitx+1,hity-3))&&hitbox(Point(hitx+2,hity-3)));
-        break;
-    case 6:
-        return !(hitbox(Point(hitx+2,hity-3))&&hitbox(Point(hitx+3,hity-3))&&hitbox(Point(hitx+4,hity-3))&&hitbox(Point(hitx+5,hity-3))&&hitbox(Point(hitx+6,hity-3)));
-        break;
-    case 7:
-        return !(hitbox(Point(hitx+9,hity))&&hitbox(Point(hitx+9,hity-1))&&hitbox(Point(hitx+8,hity-1))&&hitbox(Point(hitx+8,hity-2))&&hitbox(Point(hitx+7,hity-2))&&hitbox(Point(hitx+7,hity-3))&&hitbox(Point(hitx+6,hity-3)));
-        break;
-    default:
-        break;
+        for(int j=0;j<9;j++)
+        {
+            if(hitbox(i,j) && !tab.est_traversable(i,j))
+            {
+                    return false;
+            }
+        }
     }
-    return false;
+    return true;
 }
 
-bool Caisse::hitbox(Point impact)
+bool Caisse::hitbox(int x,int y)
 {
-    int x=impact.getx();
-    int y=impact.gety();
     if(angle==0)
     {
         if(y>6){return false;}//dessus de la caisse
@@ -213,4 +197,11 @@ bool Caisse::hitbox(Point impact)
     }
 
     exit (2);
+}
+
+void Caisse::prendpos(Caisse* c)
+{
+    this->angle=c->getAngle();
+    this->pm=c->getPm();
+    this->centre=c->getcentre();
 }

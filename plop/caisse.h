@@ -11,6 +11,7 @@
 #include "option.h"
 #include "Point.h"
 #include "tourelle.h"
+#include "grilleterrain.h"
 #include <iostream>
 
 using namespace std;
@@ -21,18 +22,20 @@ private:
     Tourelle* tourelle;
     int angle;
     int pm;
-    Point refHitbox;
+    Point centre;
 public:
     Caisse();
     void deplacement();
-    void keyPressEvent(QKeyEvent* event);
+    void keyPressEvent(QKeyEvent* event, Grilleterrain tab);
     void setAngle(int x){angle=x;}
     void setPm(int x){pm=x;}
     Tourelle* getTourelle(){return tourelle;}
     int getPm(){return pm;}
     int getAngle(){return angle;}
-    bool peutBouger(int orientation);
-    bool hitbox(Point impact);
+    Point getcentre(){return centre;}
+    bool peutBouger(Grilleterrain tab);
+    bool hitbox(int x,int y);
+    void prendpos(Caisse *c);
 };
 
 #endif // CAISSE_H

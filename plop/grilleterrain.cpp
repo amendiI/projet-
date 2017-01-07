@@ -151,3 +151,8 @@ void Grilleterrain::creecrevasse(Point p)
     }
 
 }
+
+bool Grilleterrain::est_traversable(int x,int y)
+{
+    return tabterrain[x][y]->getbloque();
+}

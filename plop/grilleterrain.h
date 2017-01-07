@@ -16,6 +16,7 @@ public:
     void creerocher(Point p);
     void creeriviere();
     void creecrevasse(Point p);
+    bool est_traversable(int x,int y);
 private:
     terrain* tabterrain[W/5][H/5];
 };
