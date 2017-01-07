@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     hud.cpp \
     mypixmap.cpp \
     caisse.cpp \
-    tourelle.cpp
+    tourelle.cpp \
+    tir.cpp
 
 HEADERS  += \
     terrain.h \
@@ -36,7 +37,8 @@ HEADERS  += \
     caisse.h \
     tourelle.h \
     mypixmap.h \
-    hitbox.h
+    hitbox.h \
+    tir.h
 
 RESOURCES += \
     res.qrc

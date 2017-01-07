@@ -25,7 +25,6 @@ private:
     int obus2;
     int obus3;
     int pv;
-    Point centre;
     //TODO marquer le centre
 
 public:
