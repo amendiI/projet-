@@ -10,11 +10,11 @@ Tir::Tir(Point posinit, Point posarrive ,int angle, int anglec, int typeobus)
 
     distance= ((-abs(anglec-45)+45)/45)*W/3;
 
-    posarrive.setx(posinit.getx()+distance*cos(angle));
-    posarrive.sety(posinit.gety()+distance*sin(angle));
+    posarrive.setx(posinit.getx()+((float)distance)*cos(angle));
+    posarrive.sety(posinit.gety()+((float)distance)*sin(angle));
 
-    d_a=(posinit.gety()- posarrive.gety())/(posinit.getx()- posarrive.getx());
-    d_b=-d_a*posarrive.getx()+posarrive.gety();
+    coefdir=((float)(posinit.gety()-posarrive.gety()))/((float)(posinit.getx()- posarrive.getx()));
+    ordori=-coefdir*posarrive.getx()+posarrive.gety();
 }
 
 int Tir::trajectoire()
@@ -24,10 +24,17 @@ int Tir::trajectoire()
     y=posinit.gety();
 
     bool en_cours=true;
+    float compteur;
+
 
     while(en_cours)
     {
+        compteur+=coefdir;
 
+        while(1)
+        {
+            //sleep(500);
+        }
     }
 }
 

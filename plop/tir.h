@@ -4,6 +4,8 @@
 #include "math.h"
 #include "point.h"
 #include "option.h"
+//#include <windows.h>
+
 class Tir
 {
 private:
@@ -13,8 +15,8 @@ private:
     int angle;
     int anglec;
     int typeobus;
-    int d_b;
-    int d_a;
+    int ordori;
+    float coefdir;
     int distance;
 
 
