@@ -6,19 +6,22 @@ Masque::Masque(Caisse c)
 {
     setRect(c.x(),c.y(),45,25);
     setRotation(c.rotation());
+    angle=c.getAngle();
 }
 
-bool Masque::peutBouger(Caisse c,QKeyEvent* event)
+bool Masque::peutBouger(QKeyEvent* event)
 {
     switch (event->key()) {
     case Qt::Key_D:
         setRotation(rotation()+45);
+        angle++;
         break;
     case Qt::Key_Q:
         setRotation(rotation()-45);
+        angle--;
         break;
     case Qt::Key_Z:
-        switch (c.getAngle()%8)
+        switch (angle%8)
         {
         case 0:
             setPos( x()+5, y());
@@ -50,7 +53,7 @@ bool Masque::peutBouger(Caisse c,QKeyEvent* event)
 
         break;
     case Qt::Key_S:
-        switch (c.getAngle()%8)
+        switch (angle%8)
             {
             case 0:
                 setPos( x()-5, y());
@@ -86,11 +89,10 @@ bool Masque::peutBouger(Caisse c,QKeyEvent* event)
 }
 
 //calcul des hitbox selons l'angle du char, return true quand point a l'intetrieur du tank
-bool Masque::hitbox(Caisse c,Point impact)
+bool Masque::hitbox(Point impact)
 {
     int x=impact.getx();
     int y=impact.gety();
-    int angle=c.getAngle();
     if(angle==0)
     {
         if(y>6){return false;}//dessus de la caisse

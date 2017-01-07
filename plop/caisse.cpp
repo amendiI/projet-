@@ -11,8 +11,8 @@ Caisse::Caisse()
     setAngle(0);
     setPm(W/50);
     setPos(x()+25,y());
-    refMasque.setx(x());
-    refMasque.sety(y());
+    refMasque.setx(x()/5);
+    refMasque.sety(y()/5);
 
 }
 
@@ -76,6 +76,7 @@ void Caisse::keyPressEvent(QKeyEvent *event)
             default:
                 break;
             }
+            cout << refMasque.getx() <<","<<refMasque.gety() << endl;
             pm--;
         }
         else if(event->key() ==Qt::Key_S)
@@ -119,6 +120,8 @@ void Caisse::keyPressEvent(QKeyEvent *event)
             }
             pm--;
         }
+        refMasque.setx(x()/5);
+        refMasque.sety(y()/5);
     }
     else if(event->key() ==Qt::Key_Space || pm==0)
     {

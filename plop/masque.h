@@ -5,12 +5,12 @@
 
 class Masque: public QGraphicsRectItem
 {
-    private:
-
-    public:
+private:
+    int angle;
+public:
     Masque(Caisse c);
-    bool peutBouger(Caisse c,QKeyEvent* event);
-    bool hitbox(Caisse c, Point impact);
+    bool peutBouger(QKeyEvent* event);
+    bool hitbox(Point impact);
 };
 
 #endif // MASQUE_H

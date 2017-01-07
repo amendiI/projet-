@@ -10,6 +10,9 @@
 #include "option.h"
 #include "Point.h"
 #include "tourelle.h"
+#include <iostream>
+
+using namespace std;
 
 class Caisse : public QGraphicsPixmapItem
 {
