@@ -16,17 +16,17 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
         setRotation(rotation()+1);
     }
     else if(event->key() ==Qt::Key_Q)
-        {
-            setRotation(rotation()-1);
-        }
+    {
+        setRotation(rotation()-1);
+    }
     else if(event->key() ==Qt::Key_Z)
-        {
-            if(angle_canon<90)angle_canon++;
-        }
+    {
+        if(angle_canon<90)angle_canon++;
+    }
     else if(event->key() ==Qt::Key_S)
-        {
-            if(angle_canon>0)angle_canon--;
-        }
+    {
+        if(angle_canon>0)angle_canon--;
+    }
     switch (angle_canon/10)
     {
     case 0:

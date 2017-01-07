@@ -35,7 +35,7 @@ void Tank::deplacement()
     caisse->setFocus();
 }
 
-//calcul des hitbox selons l'angle du char
+//calcul des hitbox selons l'angle du char, return true quand point a l'intetrieur du tank
 bool Tank::hitbox(Point impacte)
 {
     int x=impacte.getx();
