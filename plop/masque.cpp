@@ -86,6 +86,7 @@ bool Masque::peutBouger(QKeyEvent* event)
     default:
         break;
     }
+    return true;
 }
 
 //calcul des hitbox selons l'angle du char, return true quand point a l'intetrieur du tank
