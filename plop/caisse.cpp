@@ -48,30 +48,41 @@ void Caisse::keyPressEvent(QKeyEvent *event,Grilleterrain tab)
             case 1:
                 setPos( x()+5, y()+5);
                 tourelle->setPos( tourelle->x()+5, tourelle->y()+5);
+                centre.setx(cx+5);
+                centre.sety(cy+5);
                 break;
             case 2:
                 setPos( x(), y()+5);
                 tourelle->setPos( tourelle->x(), tourelle->y()+5);
+                centre.sety(cy+5);
                 break;
             case 3:
                 setPos( x()-5, y()+5);
                 tourelle->setPos( tourelle->x()-5, tourelle->y()+5);
+                centre.setx(cx-5);
+                centre.sety(cy+5);
                 break;
             case 4:
                 setPos( x()-5, y());
                 tourelle->setPos( tourelle->x()-5, tourelle->y());
+                centre.setx(cx-5);
                 break;
             case 5:
                 setPos( x()-5, y()-5);
                 tourelle->setPos( tourelle->x()-5, tourelle->y()-5);
+                centre.setx(cx-5);
+                centre.sety(cy-5);
                 break;
             case 6:
                 setPos( x(), y()-5);
                 tourelle->setPos( tourelle->x(), tourelle->y()-5);
+                centre.sety(cy-5);
                 break;
             case 7:
                 setPos( x()+5, y()-5);
                 tourelle->setPos( tourelle->x()+5, tourelle->y()-5);
+                centre.setx(cx+5);
+                centre.sety(cy-5);
                 break;
             default:
                 break;
@@ -85,34 +96,46 @@ void Caisse::keyPressEvent(QKeyEvent *event,Grilleterrain tab)
             case 0:
                 setPos( x()-5, y());
                 tourelle->setPos( tourelle->x()-5, tourelle->y());
+                centre.sety(cx-5);
                 break;
             case 1:
                 setPos( x()-5, y()-5);
                 tourelle->setPos( tourelle->x()-5, tourelle->y()-5);
+                centre.sety(cx-5);
+                centre.sety(cy-5);
                 break;
             case 2:
                 setPos( x(), y()-5);
                 tourelle->setPos( tourelle->x(), tourelle->y()-5);
+                centre.sety(cy-5);
                 break;
             case 3:
                 setPos( x()+5, y()-5);
                 tourelle->setPos( tourelle->x()+5, tourelle->y()-5);
+                centre.setx(cx+5);
+                centre.sety(cy-5);
                 break;
             case 4:
                 setPos( x()+5, y());
                 tourelle->setPos( tourelle->x()+5, tourelle->y());
+                centre.setx(cx+5);
                 break;
             case 5:
                 setPos( x()+5, y()+5);
                 tourelle->setPos( tourelle->x()+5, tourelle->y()+5);
+                centre.setx(cx+5);
+                centre.sety(cy+5);
                 break;
             case 6:
                 setPos( x(), y()+5);
                 tourelle->setPos( tourelle->x(), tourelle->y()+5);
+                centre.sety(cy+5);
                 break;
             case 7:
                 setPos( x()-5, y()+5);
                 tourelle->setPos( tourelle->x()-5, tourelle->y()+5);
+                centre.setx(cx-5);
+                centre.sety(cy+5);
                 break;
             default:
                 break;
