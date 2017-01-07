@@ -23,7 +23,6 @@ SOURCES += main.cpp\
     mypixmap.cpp \
     caisse.cpp \
     tourelle.cpp \
-    masque.cpp\
     tir.cpp
 
 HEADERS  += \
@@ -39,7 +38,6 @@ HEADERS  += \
     tourelle.h \
     mypixmap.h \
     hitbox.h \
-    masque.h\
     tir.h
 
 RESOURCES += \

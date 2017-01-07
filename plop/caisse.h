@@ -7,6 +7,7 @@
 #include <QGraphicsPixmapItem>
 #include <QKeyEvent>
 
+#include "hitbox.h"
 #include "option.h"
 #include "Point.h"
 #include "tourelle.h"
@@ -20,7 +21,7 @@ private:
     Tourelle* tourelle;
     int angle;
     int pm;
-    Point refMasque;
+    Point refHitbox;
 public:
     Caisse();
     void deplacement();
@@ -30,6 +31,8 @@ public:
     Tourelle* getTourelle(){return tourelle;}
     int getPm(){return pm;}
     int getAngle(){return angle;}
+    bool peutBouger(int orientation);
+    bool hitbox(Point impact);
 };
 
 #endif // CAISSE_H
