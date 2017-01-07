@@ -35,6 +35,7 @@ public:
     int getobus2();
     int getobus3();
     bool hitbox(Point p);
+
 };
 
 

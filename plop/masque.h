@@ -1,15 +1,16 @@
 #ifndef MASQUE_H
 #define MASQUE_H
 #include <QGraphicsRectItem>
-#include <QKeyEvent>
-#include "tank.h"
+#include "caisse.h"
 
 class Masque: public QGraphicsRectItem
 {
     private:
 
     public:
-    Masque(Tank t,int angle);
+    Masque(Caisse c);
+    bool peutBouger(Caisse c,QKeyEvent* event);
+    bool hitbox(Caisse c, Point impact);
 };
 
 #endif // MASQUE_H

@@ -20,7 +20,6 @@ private:
     Point refMasque;
 public:
     Caisse();
-    void verif
     void deplacement();
     void keyPressEvent(QKeyEvent* event);
     void setAngle(int x){angle=x;}
