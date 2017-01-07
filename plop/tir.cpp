@@ -36,5 +36,6 @@ int Tir::trajectoire()
             //sleep(500);
         }
     }
+    return 0;
 }
 
