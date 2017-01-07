@@ -1,5 +1,8 @@
 #include "tir.h"
 
+#include <iostream>
+using namespace std ;
+
 Tir::Tir(Point posinit, Point posarrive ,int angle, int anglec, int typeobus)
 {
     this->angle=angle;
@@ -27,13 +30,15 @@ int Tir::trajectoire()
     float compteur;
 
 
-    while(en_cours)
+    //while(en_cours)
     {
         compteur+=coefdir;
-
-        while(1)
+        int i=0;
+        time_t t=time(NULL);
+        while(t)
         {
-            //sleep(500);
+             cout<<("pwet")<<endl;
+             i++;
         }
     }
     return 0;

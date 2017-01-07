@@ -13,6 +13,7 @@
 #include "option.h"
 #include "grilleterrain.h"
 #include "tank.h"
+#include "tir.h"
 
 using namespace std;
 
@@ -41,5 +42,11 @@ int main(int argc,char** argv)
 
     tank->deplacement();
     vue->setScene(scene);
+
+    Point p;
+    Tir* t=new Tir(p,p,45,45,3);
+
+    t->trajectoire();
+
     return a.exec();
 }

@@ -4,7 +4,7 @@
 #include "math.h"
 #include "point.h"
 #include "option.h"
-//#include <windows.h>
+#include "time.h"
 
 class Tir
 {
