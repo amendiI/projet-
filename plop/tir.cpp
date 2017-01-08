@@ -13,14 +13,20 @@ Tir::Tir(Point posinit,int angle, int anglec, int typeobus)
     this->posobus=posinit;
     this->obus.setPixmap(QPixmap(":/images/shell1.png"));
 
-    distance= ((-abs(anglec-45)+45)/45)*W/3;
+    distance= (-abs(anglec-25)+45);
 
-    posarrive.setx(posinit.getx()+((float)distance)*cos(angle));
-    posarrive.sety(posinit.gety()+((float)distance)*sin(angle));
+    posarrive.setx(posinit.getx()+((float)distance)*cos(angle*PI/180));
+    posarrive.sety(posinit.gety()+((float)distance)*sin(angle*PI/180));
+
+
 
     coefdir=((float)(posinit.gety()-posarrive.gety()))/((float)(posinit.getx()- posarrive.getx()));
-    cout<<coefdir<<endl;
+
     ordori=-coefdir*posarrive.getx()+posarrive.gety();
+
+    cout<<distance<<endl;
+    cout<<posarrive.getx()<<";"<<posarrive.gety()<<endl;
+    cout<<coefdir<<endl;
 }
 
 Tir::~Tir()
@@ -51,6 +57,7 @@ int Tir::trajectoire(QGraphicsScene* scene)
                 compteur-=1;
             else
                 compteur+=1;
+
             posobus.sety(posobus.gety()+1);
             obus.setPos(obus.x(),posobus.gety()*5);
             if(posobus.getx()==posarrive.getx()&&posobus.gety()==posarrive.gety())

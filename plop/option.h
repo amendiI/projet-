@@ -27,7 +27,7 @@
 #define W 800
 #define H 600
 
-
-
+//definition des constantes
+#define PI 3.14159265
 
 #endif // OPTION_H
