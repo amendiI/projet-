@@ -9,7 +9,8 @@ Caisse::Caisse(Grilleterrain *grille)
     setFlag(QGraphicsItem::ItemIsFocusable);
     setAngle(0);
     setPm(W/50);
-    setPos(x()+25,y());
+    setPos(125,300);
+    tourelle-> setPos(100,300);
     centre.setx(x()/5+4);
     centre.sety(y()/5-2);
     tab=grille;
