@@ -31,7 +31,7 @@ int main(int argc,char** argv)
 
     grille->initterrain();
 
-    Tank* tank = new Tank(grille);
+    Tank* tank = new Tank(grille,"tiger");
     tank->afficheTank(scene);
 
 

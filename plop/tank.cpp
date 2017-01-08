@@ -1,10 +1,10 @@
 #include "tank.h"
 #include "hitbox.h"
 
-Tank::Tank(Grilleterrain *tab)
+Tank::Tank(Grilleterrain *tab,string nomTank)
 {
     //tourelle=new Tourelle();
-    caisse=new Caisse(tab);
+    caisse=new Caisse(tab,nomTank);
 
 
 }

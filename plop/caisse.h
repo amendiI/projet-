@@ -25,7 +25,7 @@ private:
     Point centre;
     Grilleterrain* tab;
 public:
-    Caisse(Grilleterrain* grille);
+    Caisse(Grilleterrain* grille, string nomTank);
     void deplacement();
     void keyPressEvent(QKeyEvent* event);
     void setAngle(int x){angle=x;}

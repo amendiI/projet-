@@ -1,16 +1,25 @@
 #include "caisse.h"
 
-Caisse::Caisse(Grilleterrain *grille)
+Caisse::Caisse(Grilleterrain *grille, string nomTank)
 {
-    tourelle= new Tourelle();
-    setPixmap(QPixmap(":/images/Tank.png"));
+    tourelle= new Tourelle(nomTank);
+
+    if(nomTank=="tiger")
+    {
+        setPixmap(QPixmap(":/images/tigercaisse.png"));
+        tourelle->setPos(x()-24,y());
+    }
+    else if(nomTank=="kv1")
+    {
+        setPixmap(QPixmap(":/images/kv1caisse.png"));
+        tourelle->setPos(x()-19,y());
+    }
     setShapeMode(QGraphicsPixmapItem::MaskShape);
     //setTransformOriginPoint(22,12);
     setFlag(QGraphicsItem::ItemIsFocusable);
     setAngle(0);
     setPm(W/50);
     setPos(125,300);
-    tourelle-> setPos(100,300);
     centre.setx(x()/5+4);
     centre.sety(y()/5-2);
     tab=grille;
@@ -21,7 +30,7 @@ void Caisse::keyPressEvent(QKeyEvent *event)
 {
     int cx=centre.getx();
     int cy=centre.gety();
-    Caisse* c=new Caisse(tab);
+    Caisse* c=new Caisse(tab,"tiger");
 
     if(pm>0)
     {

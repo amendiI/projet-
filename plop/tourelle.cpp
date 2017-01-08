@@ -1,8 +1,16 @@
 #include "tourelle.h"
 
-Tourelle::Tourelle()
+Tourelle::Tourelle(string nomTank)
 {
-    setPixmap(QPixmap(":/images/Tourelle.png"));
+    type=nomTank;
+    if(nomTank=="tiger")
+    {
+        setPixmap(QPixmap(":/images/tigertourelle.png"));
+    }
+    else if(nomTank=="kv1")
+    {
+        setPixmap(QPixmap(":/images/kv1tourelle.png"));
+    }
     setShapeMode(QGraphicsPixmapItem::MaskShape);
     setTransformOriginPoint(46,12);
     setFlag(QGraphicsItem::ItemIsFocusable);
@@ -27,42 +35,82 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
     {
         if(angle_canon>0)angle_canon--;
     }
-    switch (angle_canon/10)
+    if(type=="tiger")
     {
-    case 0:
-        setPixmap(QPixmap(":/images/Tourelle.png"));
-        break;
-    case 1:
-        setPixmap(QPixmap(":/images/Tourelle10.png"));
-        break;
-    case 2:
-        setPixmap(QPixmap(":/images/Tourelle20.png"));
-        break;
-    case 3:
-        setPixmap(QPixmap(":/images/Tourelle30.png"));
-        break;
-    case 4:
-        setPixmap(QPixmap(":/images/Tourelle40.png"));
-        break;
-    case 5:
-        setPixmap(QPixmap(":/images/Tourelle50.png"));
-        break;
-    case 6:
-        setPixmap(QPixmap(":/images/Tourelle60.png"));
-        break;
-    case 7:
-        setPixmap(QPixmap(":/images/Tourelle70.png"));
-        break;
-    case 8:
-        setPixmap(QPixmap(":/images/Tourelle80.png"));
-        break;
-    case 9:
-        setPixmap(QPixmap(":/images/Tourelle90.png"));
-        break;
-    default:
-        break;
+        switch (angle_canon/10)
+        {
+        case 0:
+            setPixmap(QPixmap(":/images/tigertourelle.png"));
+            break;
+        case 1:
+            setPixmap(QPixmap(":/images/tigertourelle10.png"));
+            break;
+        case 2:
+            setPixmap(QPixmap(":/images/tigertourelle20.png"));
+            break;
+        case 3:
+            setPixmap(QPixmap(":/images/tigertourelle30.png"));
+            break;
+        case 4:
+            setPixmap(QPixmap(":/images/tigertourelle40.png"));
+            break;
+        case 5:
+            setPixmap(QPixmap(":/images/tigertourelle50.png"));
+            break;
+        case 6:
+            setPixmap(QPixmap(":/images/tigertourelle60.png"));
+            break;
+        case 7:
+            setPixmap(QPixmap(":/images/tigertourelle70.png"));
+            break;
+        case 8:
+            setPixmap(QPixmap(":/images/tigertourelle80.png"));
+            break;
+        case 9:
+            setPixmap(QPixmap(":/images/tigertourelle90.png"));
+            break;
+        default:
+            break;
+        }
     }
-
+    else if(type=="kv1")
+    {
+        switch (angle_canon/10)
+        {
+        case 0:
+            setPixmap(QPixmap(":/images/tigertourelle.png"));
+            break;
+        case 1:
+            setPixmap(QPixmap(":/images/kv1tourelle10.png"));
+            break;
+        case 2:
+            setPixmap(QPixmap(":/images/kv1tourelle10.png"));
+            break;
+        case 3:
+            setPixmap(QPixmap(":/images/kv1tourelle30.png"));
+            break;
+        case 4:
+            setPixmap(QPixmap(":/images/kv1tourelle30.png"));
+            break;
+        case 5:
+            setPixmap(QPixmap(":/images/kv1tourelle50.png"));
+            break;
+        case 6:
+            setPixmap(QPixmap(":/images/kv1tourelle50.png"));
+            break;
+        case 7:
+            setPixmap(QPixmap(":/images/kv1tourelle70.png"));
+            break;
+        case 8:
+            setPixmap(QPixmap(":/images/kv1tourelle70.png"));
+            break;
+        case 9:
+            setPixmap(QPixmap(":/images/kv1ourelle90.png"));
+            break;
+        default:
+            break;
+        }
+    }
 }
 
 

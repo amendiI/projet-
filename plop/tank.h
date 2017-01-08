@@ -9,13 +9,9 @@
 #include <QKeyEvent>
 #include <QWidget>
 
-
-#include <iostream>
-
 #include "option.h"
 #include "Point.h"
 #include "caisse.h"
-#include "tourelle.h"
 
 class Tank
 {
@@ -27,7 +23,7 @@ private:
     int pv;
 
 public:
-    Tank(Grilleterrain* tab);
+    Tank(Grilleterrain* tab, string nomTank);
     void afficheTank(QGraphicsScene *scene);
     void visee();
     void deplacement();
