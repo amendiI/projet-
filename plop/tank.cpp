@@ -4,7 +4,7 @@
 Tank::Tank(Grilleterrain *tab,string nomTank)
 {
     //tourelle=new Tourelle();
-    caisse=new Caisse(tab,nomTank);
+    caisse=new Caisse(tab,nomTank,Point(100,100));
 
 
 }

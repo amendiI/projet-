@@ -1,8 +1,8 @@
 #include "caisse.h"
 
-Caisse::Caisse(Grilleterrain *grille, string nomTank)
+Caisse::Caisse(Grilleterrain *grille, string nomTank, Point pos)
 {
-    setPos(125,300);
+    setPos(pos.getx(),pos.gety());
     tourelle= new Tourelle(nomTank);
     if(nomTank=="tiger")
     {
@@ -15,7 +15,7 @@ Caisse::Caisse(Grilleterrain *grille, string nomTank)
         tourelle->setPos(x()-19,y());
     }
     setShapeMode(QGraphicsPixmapItem::MaskShape);
-    //setTransformOriginPoint(22,12);
+    setTransformOriginPoint(22,12);
     setFlag(QGraphicsItem::ItemIsFocusable);
     setAngle(0);
     setPm(W/50);
@@ -25,11 +25,13 @@ Caisse::Caisse(Grilleterrain *grille, string nomTank)
 
 }
 
+Caisse::~Caisse(){}
+
 void Caisse::keyPressEvent(QKeyEvent *event)
 {
     int cx=centre.getx();
     int cy=centre.gety();
-    Caisse* c=new Caisse(tab,"tiger");
+    Caisse* c=new Caisse(tab,"tiger",Point(x(),y()));
 
     if(pm>0)
     {
@@ -51,9 +53,9 @@ void Caisse::keyPressEvent(QKeyEvent *event)
             switch (angle%8)
             {
             case 0:
-                c->setPos( x()+5, y());
-                c->tourelle->setPos( tourelle->x()+5, tourelle->y());
-                c->centre.setx(cx+5);
+                setPos( x()+5, y());
+                tourelle->setPos( tourelle->x()+5, tourelle->y());
+                centre.setx(cx+5);
                 break;
             case 1:
                 c->setPos( x()+5, y()+5);
@@ -165,6 +167,7 @@ void Caisse::keyPressEvent(QKeyEvent *event)
         clearFocus();
         tourelle->setFocus();
     }
+    c->~Caisse();
 }
 
 bool Caisse::peutBouger(Grilleterrain* tab)
