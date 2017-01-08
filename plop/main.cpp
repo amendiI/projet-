@@ -33,7 +33,7 @@ int main(int argc,char** argv)
 
     grille->initterrain();
 
-    Tank* tank = new Tank(grille,"tiger",Point(100,100));
+    Tank* tank = new Tank(grille,"tiger",Point(100,100),scene);
     tank->afficheTank(scene);
     Hud* hud = new Hud(tank);
     hud->afficheHud(scene);
@@ -45,11 +45,6 @@ int main(int argc,char** argv)
 
     tank->deplacement();
     vue->setScene(scene);
-
-    Point p;
-    Tir* t=new Tir(p,p,45,45,3);
-
-    //t->trajectoire();
 
     return a.exec();
 }

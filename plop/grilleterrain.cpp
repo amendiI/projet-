@@ -20,21 +20,21 @@ void Grilleterrain::initterrain()
 {
     Point p;
 
-    creeriviere();
+    //creeriviere();
 
-    for(int i=0;i<2;i++)
+    for(int i=0;i<0;i++)
     {
         p.setx(aleat(W/5));
         p.sety(aleat(H/5));
         creearbre(p);
     }
-    for(int i=0;i<2;i++)
+    for(int i=0;i<0;i++)
     {
         p.setx(aleat(W/5));
         p.sety(aleat(H/5));
         creerocher(p);
     }
-    for(int i=0;i<2;i++)
+    for(int i=0;i<0;i++)
     {
         p.setx(aleat(W/5));
         p.sety(aleat(H/5));
