@@ -22,7 +22,7 @@ private:
 
 
 public:
-    Tir(Point posinit, Point posarrive,int angle,int anglec,int typeobus);
+    Tir(Point posinit, int angle, int anglec, int typeobus);
     ~Tir();
     int trajectoire(QGraphicsScene *scene);
     void impact();

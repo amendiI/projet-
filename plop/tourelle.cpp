@@ -38,9 +38,9 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() ==Qt::Key_Space)
     {
-        Tir* t=new Tir(Point (0,0),Point(10,10),45,45,3);
+        Tir* t=new Tir(Point (0,0),45,45,3);
 
-        t->trajectoire(scene);
+        //t->trajectoire(scene);
     }
     if(type=="tiger")
     {
