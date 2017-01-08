@@ -29,9 +29,10 @@ private:
     int pm;
     Point centre;
     Grilleterrain* tab;
+    QGraphicsScene *scene;
 
 public:
-    Tank(Grilleterrain* grille, string nomTank, Point pos);
+    Tank(Grilleterrain* grille, string nomTank, Point pos,QGraphicsScene *scene);
     ~Tank();
     void afficheTank(QGraphicsScene *scene);
     void visee();
