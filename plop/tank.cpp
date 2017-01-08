@@ -1,10 +1,11 @@
 #include "tank.h"
 #include "hitbox.h"
 
-Tank::Tank(Grilleterrain *grille, string nomTank, Point pos)
+Tank::Tank(Grilleterrain *grille, string nomTank, Point pos, QGraphicsScene *scene)
 {
+    this->scene=scene;
     setPos(pos.getx(),pos.gety());
-    tourelle= new Tourelle(nomTank);
+    tourelle= new Tourelle(nomTank,scene);
     if(nomTank=="tiger")
     {
         setPixmap(QPixmap(":/images/tigercaisse.png"));
@@ -20,8 +21,6 @@ Tank::Tank(Grilleterrain *grille, string nomTank, Point pos)
     setFlag(QGraphicsItem::ItemIsFocusable);
     setAngle(0);
     setPm(W/50);
-    //centre.setx((x()+4)/5/*+4*/);
-    //centre.sety((y()-2)/5/*-2*/);
     centre.setx(x()/5-4);
     centre.sety(y()/5-6);
     tab=grille;
@@ -57,7 +56,7 @@ void Tank::keyPressEvent(QKeyEvent *event)
     int yp=0;
     int ap=0;
     int op=angle;
-    Tank* c=new Tank(tab,"tiger",Point(x(),y()));
+    Tank* c=new Tank(tab,"tiger",Point(x(),y()),scene);
 
     if(pm>0)
     {
@@ -136,9 +135,11 @@ void Tank::keyPressEvent(QKeyEvent *event)
             tourelle->setPos(c->tourelle->pos());
             setPos(c->pos());
             centre=c->centre;
-            //pm--;
+            pm--;
         }
         c->~Tank();
+        if(!pm)
+            visee();
     }
 }
 
@@ -152,18 +153,12 @@ bool Tank::peutBouger(Grilleterrain *tab)
     {
         for(int j=0;j<9;j++)
         {
-            tab->changeterrain(x+i,y+j);
             if(hitbox(i,j) &&est_dans_ecrant(i,j,W,H)&&
                     tab->est_traversable(x+i,y+j))
-            {
-                cout<<endl;
-                cout<<x+i<<";"<<y+j<<endl;
-                cout<<tab->getypeterrain(x+i,y+j)<<endl;
-                //tab->changeterrain(x+1,y+1);
+            { 
                 return false;
             }
         }
-        cout<<endl;
     }
     return true;
 }
@@ -218,7 +213,7 @@ bool Tank::hitbox(int x, int y)
 
 void Tank::visee()
 {
-    //tourelle->setFocus();
+    tourelle->setFocus();
 }
 
 void Tank::deplacement()

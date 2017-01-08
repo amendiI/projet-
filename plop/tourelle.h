@@ -8,6 +8,8 @@
 #include <QKeyEvent>
 #include <string.h>
 #include <iostream>
+
+#include "tir.h"
 #include "option.h"
 #include "Point.h"
 
@@ -19,8 +21,9 @@ private:
     int angle_tourelle;
     int angle_canon;
     string type;
+    QGraphicsScene* scene;
 public:
-    Tourelle(string nomTank);
+    Tourelle(string nomTank,QGraphicsScene* scene);
     void keyPressEvent(QKeyEvent* event);
     void set_angle_tourelle(int x){angle_tourelle=x;}
     void set_angle_canon(int x){angle_canon=x;}
