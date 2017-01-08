@@ -25,15 +25,13 @@ private:
     Tourelle *tourelle;
     int obus2;
     int obus3;
-    int pv;
     int angle;
     int pm;
     Point centre;
     Grilleterrain* tab;
-    QGraphicsScene* scene;
 
 public:
-    Tank(Grilleterrain* grille, string nomTank, Point pos,QGraphicsScene* scene);
+    Tank(Grilleterrain* grille, string nomTank, Point pos);
     ~Tank();
     void afficheTank(QGraphicsScene *scene);
     void visee();
@@ -48,7 +46,6 @@ public:
     Tourelle* getTourelle(){return tourelle;}
     int getPm(){return pm;}
     int getAngle(){return angle;}
-    int getPv(){return pv;}
     Point getcentre(){return centre;}
     bool peutBouger(Grilleterrain *tab);
     bool hitbox(int x,int y);
