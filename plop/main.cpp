@@ -11,11 +11,8 @@
 
 
 #include "terrain.h"
-#include "option.h"
-#include "grilleterrain.h"
 #include "tank.h"
 #include "tir.h"
-#include "hud.h"
 
 using namespace std;
 
@@ -32,10 +29,9 @@ int main(int argc,char** argv)
     vue->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     grille->initterrain();
-
-    Tank* tank = new Tank(grille,"tiger",Point(100,100),scene);
+    Hud* hud;
+    Tank* tank = new Tank(grille,"tiger",Point(100,100),scene,hud);
     tank->afficheTank(scene);
-    Hud* hud = new Hud(tank);
     hud->afficheHud(scene);
 
 

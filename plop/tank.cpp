@@ -1,12 +1,12 @@
 #include "tank.h"
 #include "hitbox.h"
 
-Tank::Tank(Grilleterrain *grille, string nomTank, Point pos, QGraphicsScene *scene)
+Tank::Tank(Grilleterrain *grille, string nomTank, Point pos, QGraphicsScene *scene,Hud* mainhud)
 {
     obus2=10;
     obus3=5;
     setPos(pos.getx(),pos.gety());
-    tourelle= new Tourelle(nomTank,scene);
+    tourelle= new Tourelle(nomTank,scene,mainhud);
     if(nomTank=="tiger")
     {
         setPixmap(QPixmap(":/images/tigercaisse.png"));
@@ -26,7 +26,10 @@ Tank::Tank(Grilleterrain *grille, string nomTank, Point pos, QGraphicsScene *sce
     centre.setx(x()/5-4);
     centre.sety(y()/5-6);
     tab=grille;
-
+    hud=mainhud;
+    hud->setHudPm(pm);
+    hud->setHudObus2(obus2);
+    hud->setHudObus3(obus3);
 }
 
 Tank::~Tank()
@@ -58,7 +61,7 @@ void Tank::keyPressEvent(QKeyEvent *event)
     int yp=0;
     int ap=0;
     int op=angle;
-    Tank* c=new Tank(tab,"tiger",Point(x(),y()),scene);
+    Tank* c=new Tank(tab,"tiger",Point(x(),y()),scene,hud);
 
     if(pm>0)
     {
@@ -138,6 +141,9 @@ void Tank::keyPressEvent(QKeyEvent *event)
             setPos(c->pos());
             centre=c->centre;
             //pm--;
+            hud->setHudPm(pm);
+            hud->setHudAngleTourelle(tourelle->rotation());
+
         }
         c->~Tank();
     }

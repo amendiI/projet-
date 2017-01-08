@@ -1,12 +1,12 @@
 #include "hud.h"
 
-Hud::Hud(Tank *t)
+Hud::Hud(int pm,int obus2,int obus3,int angle_tourelle,int angle_canon)
 {
-    aff_pm.setPlainText(QString("pm :"+conversion.number(t->getPm())));
-    aff_obus2.setPlainText(QString("obus 2 :"+conversion.number(t->getobus2())));
-    aff_obus3.setPlainText(QString("obus 3 :"+conversion.number(t->getobus3())));
-    aff_angle_tourelle.setPlainText(QString("tourelle :"+conversion.number(t->getTourelle()->get_angle_tourelle())));
-    aff_angle_canon.setPlainText(QString("canon :"+conversion.number(t->getTourelle()->get_angle_canon())));
+    aff_pm.setPlainText(QString("pm :"+conversion.number(pm)));
+    aff_obus2.setPlainText(QString("obus 2 :"+conversion.number(obus2)));
+    aff_obus3.setPlainText(QString("obus 3 :"+conversion.number(obus3)));
+    aff_angle_tourelle.setPlainText(QString("tourelle :"+conversion.number(angle_tourelle)));
+    aff_angle_canon.setPlainText(QString("canon :"+conversion.number(angle_canon)));
 
 
     aff_pm.setDefaultTextColor(QColor(255,255,255,255));

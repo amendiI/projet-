@@ -12,6 +12,7 @@
 #include "tir.h"
 #include "option.h"
 #include "Point.h"
+#include "hud.h"
 
 using namespace std;
 
@@ -22,8 +23,9 @@ private:
     int angle_canon;
     string type;
     QGraphicsScene* scene;
+    Hud* hud;
 public:
-    Tourelle(string nomTank,QGraphicsScene* scene);
+    Tourelle(string nomTank,QGraphicsScene* scene,Hud* mainhud);
     void keyPressEvent(QKeyEvent* event);
     void set_angle_tourelle(int x){angle_tourelle=x;}
     void set_angle_canon(int x){angle_canon=x;}
