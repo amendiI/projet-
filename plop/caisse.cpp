@@ -1,6 +1,6 @@
 #include "caisse.h"
 
-Caisse::Caisse()
+Caisse::Caisse(Grilleterrain *grille)
 {
     tourelle= new Tourelle();
     setPixmap(QPixmap(":/images/Tank.png"));
@@ -12,14 +12,15 @@ Caisse::Caisse()
     setPos(x()+25,y());
     centre.setx(x()/5+4);
     centre.sety(y()/5-2);
+    tab=grille;
 
 }
 
-void Caisse::keyPressEvent(QKeyEvent *event,Grilleterrain tab)
+void Caisse::keyPressEvent(QKeyEvent *event)
 {
     int cx=centre.getx();
     int cy=centre.gety();
-    Caisse* c=new Caisse();
+    Caisse* c=new Caisse(tab);
 
     if(pm>0)
     {
@@ -154,7 +155,7 @@ void Caisse::keyPressEvent(QKeyEvent *event,Grilleterrain tab)
     }
 }
 
-bool Caisse::peutBouger(Grilleterrain tab)
+bool Caisse::peutBouger(Grilleterrain* tab)
 {
     int x=centre.getx();
     int y=centre.gety();
@@ -165,7 +166,7 @@ bool Caisse::peutBouger(Grilleterrain tab)
     {
         for(int j=0;j<9;j++)
         {
-            if(hitbox(i,j) && !tab.est_traversable(i,j))
+            if(hitbox(i,j) && !tab->est_traversable(i,j))
             {
                     return false;
             }

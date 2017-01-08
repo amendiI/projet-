@@ -23,17 +23,18 @@ private:
     int angle;
     int pm;
     Point centre;
+    Grilleterrain* tab;
 public:
-    Caisse();
+    Caisse(Grilleterrain* grille);
     void deplacement();
-    void keyPressEvent(QKeyEvent* event, Grilleterrain tab);
+    void keyPressEvent(QKeyEvent* event);
     void setAngle(int x){angle=x;}
     void setPm(int x){pm=x;}
     Tourelle* getTourelle(){return tourelle;}
     int getPm(){return pm;}
     int getAngle(){return angle;}
     Point getcentre(){return centre;}
-    bool peutBouger(Grilleterrain tab);
+    bool peutBouger(Grilleterrain *tab);
     bool hitbox(int x,int y);
     void prendpos(Caisse *c);
 };

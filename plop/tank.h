@@ -25,10 +25,9 @@ private:
     int obus2;
     int obus3;
     int pv;
-    //TODO marquer le centre
 
 public:
-    Tank();
+    Tank(Grilleterrain* tab);
     void afficheTank(QGraphicsScene *scene);
     void visee();
     void deplacement();
