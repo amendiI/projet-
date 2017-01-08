@@ -23,24 +23,35 @@ Tir::Tir(Point posinit, Point posarrive ,int angle, int anglec, int typeobus)
 int Tir::trajectoire()
 {
     int x,y;
-    x=posinit.getx();
-    y=posinit.gety();
+    x=posarrive.getx();
+    y=posarrive.gety();
 
     bool en_cours=true;
-    float compteur;
+    float compteur=0;
 
 
-    //while(en_cours)
+    while(en_cours)
     {
         compteur+=coefdir;
-        int i=0;
-        time_t t=time(NULL);
-        while(t+1>time(NULL))
+
+        while(compteur>1)
         {
-             cout<<t<<endl;
-             i++;
+            compteur-=1;
+            posobus.sety(posobus.gety()+1);
+            if(posobus.getx()==posarrive.getx()||posobus.gety()==posarrive.gety())
+                impact();
+            attendre(200);
         }
+        posobus.setx(posobus.getx()+1);
+        if(posobus.getx()==posarrive.getx()||posobus.gety()==posarrive.gety())
+            impact();
+        attendre(200);
     }
     return 0;
+}
+
+void Tir::impact()
+{
+
 }
 
