@@ -35,9 +35,9 @@ int Tir::trajectoire()
         compteur+=coefdir;
         int i=0;
         time_t t=time(NULL);
-        while(t)
+        while(t+1>time(NULL))
         {
-             cout<<("pwet")<<endl;
+             cout<<t<<endl;
              i++;
         }
     }
