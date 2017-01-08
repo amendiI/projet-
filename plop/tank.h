@@ -47,6 +47,7 @@ public:
     Tourelle* getTourelle(){return tourelle;}
     int getPm(){return pm;}
     int getAngle(){return angle;}
+    int getPv(){return pv;}
     Point getcentre(){return centre;}
     bool peutBouger(Grilleterrain *tab);
     bool hitbox(int x,int y);
