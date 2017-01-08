@@ -22,6 +22,7 @@ private:
 
 public:
     Tir(Point posinit, Point posarrive,int angle,int anglec,int typeobus);
+    ~Tir();
     int trajectoire();
     void impact();
 

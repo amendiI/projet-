@@ -20,6 +20,11 @@ Tir::Tir(Point posinit, Point posarrive ,int angle, int anglec, int typeobus)
     ordori=-coefdir*posarrive.getx()+posarrive.gety();
 }
 
+Tir::~Tir()
+{
+
+}
+
 int Tir::trajectoire()
 {
     int x,y;
