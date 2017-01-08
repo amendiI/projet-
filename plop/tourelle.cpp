@@ -6,13 +6,14 @@ Tourelle::Tourelle(string nomTank, QGraphicsScene *scene, Hud *mainhud)
     if(type=="tiger")
     {
         setPixmap(QPixmap(":/images/tigertourelle.png"));
+        setTransformOriginPoint(46,12);
     }
     else if(type=="kv1")
     {
         setPixmap(QPixmap(":/images/kv1tourelle.png"));
+        setTransformOriginPoint(41,12);
     }
     setShapeMode(QGraphicsPixmapItem::MaskShape);
-    setTransformOriginPoint(46,12);
     setFlag(QGraphicsItem::ItemIsFocusable);
     angle_canon=0;
     this->scene=scene;
@@ -23,6 +24,12 @@ Tourelle::Tourelle(string nomTank, QGraphicsScene *scene, Hud *mainhud)
 
 void Tourelle::keyPressEvent(QKeyEvent *event)
 {
+    if(type=="kv1")
+    {
+        setPixmap((QPixmap(":/images/kv1tourelle.png")));
+        setTransformOriginPoint(46,12);
+    }
+
     if(event->key() ==Qt::Key_D)
     {
         setRotation(rotation()+1);
@@ -115,7 +122,7 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
             setPixmap(QPixmap(":/images/kv1tourelle70.png"));
             break;
         case 9:
-            setPixmap(QPixmap(":/images/kv1ourelle90.png"));
+            setPixmap(QPixmap(":/images/kv1tourelle90.png"));
             break;
         default:
             break;

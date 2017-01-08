@@ -2,11 +2,11 @@
 
 Hud::Hud()
 {
-    pm=0;
+    /*pm=0;
     obus2=0;
     obus3=0;
     angle_tourelle=0;
-    angle_canon=0;
+    angle_canon=0;*/
     aff_pm.setPlainText(QString("pm :"+conversion.number(pm)));
     aff_obus2.setPlainText(QString("obus 2 :"+conversion.number(obus2)));
     aff_obus3.setPlainText(QString("obus 3 :"+conversion.number(obus3)));

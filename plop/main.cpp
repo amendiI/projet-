@@ -30,7 +30,7 @@ int main(int argc,char** argv)
 
     grille->initterrain();
     Hud* hud=new Hud();
-    Tank* tank = new Tank(grille,"tiger",Point(100,100),scene,hud);
+    Tank* tank = new Tank(grille,"kv1",Point(100,100),scene,hud);
     tank->afficheTank(scene);
     hud->afficheHud(scene);
 
