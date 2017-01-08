@@ -3,11 +3,11 @@
 Tourelle::Tourelle(string nomTank)
 {
     type=nomTank;
-    if(nomTank=="tiger")
+    if(type=="tiger")
     {
         setPixmap(QPixmap(":/images/tigertourelle.png"));
     }
-    else if(nomTank=="kv1")
+    else if(type=="kv1")
     {
         setPixmap(QPixmap(":/images/kv1tourelle.png"));
     }

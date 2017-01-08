@@ -46,7 +46,7 @@ int main(int argc,char** argv)
     Point p;
     Tir* t=new Tir(p,p,45,45,3);
 
-    t->trajectoire();
+    //t->trajectoire();
 
     return a.exec();
 }

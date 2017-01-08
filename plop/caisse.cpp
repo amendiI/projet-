@@ -2,8 +2,8 @@
 
 Caisse::Caisse(Grilleterrain *grille, string nomTank)
 {
+    setPos(125,300);
     tourelle= new Tourelle(nomTank);
-
     if(nomTank=="tiger")
     {
         setPixmap(QPixmap(":/images/tigercaisse.png"));
@@ -19,7 +19,6 @@ Caisse::Caisse(Grilleterrain *grille, string nomTank)
     setFlag(QGraphicsItem::ItemIsFocusable);
     setAngle(0);
     setPm(W/50);
-    setPos(125,300);
     centre.setx(x()/5+4);
     centre.sety(y()/5-2);
     tab=grille;
