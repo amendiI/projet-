@@ -20,8 +20,10 @@ Tank::Tank(Grilleterrain *grille, string nomTank, Point pos)
     setFlag(QGraphicsItem::ItemIsFocusable);
     setAngle(0);
     setPm(W/50);
-    centre.setx(x()/5+4);
-    centre.sety(y()/5-2);
+    //centre.setx((x()+4)/5/*+4*/);
+    //centre.sety((y()-2)/5/*-2*/);
+    centre.setx(x()/5-4);
+    centre.sety(y()/5-6);
     tab=grille;
 
 }
@@ -123,8 +125,8 @@ void Tank::keyPressEvent(QKeyEvent *event)
         c->tourelle->setRotation(tourelle->rotation()+ap);
         c->tourelle->setPos(tourelle->x()+xp,tourelle->y()+yp);
         c->setPos( x()+xp, y()+yp);
-        c->centre.setx(cx+xp);
-        c->centre.sety(cy+yp);
+        c->centre.setx(cx+xp/5);
+        c->centre.sety(cy+yp/5);
 
         if(c->peutBouger(tab))
         {
