@@ -1,5 +1,5 @@
 #include "hud.h"
-
+/*
 Hud::Hud(int pm,int obus2,int obus3,int angle_tourelle,int angle_canon)
 {
     aff_pm.setPlainText(QString("pm :"+conversion.number(pm)));
@@ -32,6 +32,11 @@ Hud::Hud(int pm,int obus2,int obus3,int angle_tourelle,int angle_canon)
     aff_obus3.setPos(aff_pm.x(),aff_obus2.y()+50);
     aff_angle_tourelle.setPos(aff_pm.x(),aff_obus3.y()+50);
     aff_angle_canon.setPos(aff_pm.x(),aff_angle_tourelle.y()+50);
+}
+*/
+Hud::Hud()
+{
+
 }
 
 void Hud::afficheHud(QGraphicsScene* scene)

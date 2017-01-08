@@ -24,7 +24,7 @@ private:
     QString conversion;
 
 public:
-    Hud(int pm, int obus2, int obus3, int angle_tourelle, int angle_canon);
+    Hud();
     void afficheHud(QGraphicsScene *scene);
     void setHudPm(int newpm){pm=newpm;}
     void setHudObus2(int newobus2){pm=newobus2;}

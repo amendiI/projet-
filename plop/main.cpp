@@ -29,7 +29,7 @@ int main(int argc,char** argv)
     vue->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     grille->initterrain();
-    Hud* hud;
+    Hud* hud=new Hud();
     Tank* tank = new Tank(grille,"tiger",Point(100,100),scene,hud);
     tank->afficheTank(scene);
     hud->afficheHud(scene);
