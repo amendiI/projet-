@@ -26,4 +26,9 @@ terrain::terrain()
     bloqueobus=bt;
     setPixmap(QPixmap(image));
 
-}
+ }
+
+ void terrain::setimage()
+ {
+     setPixmap(QPixmap(IMG_crevasse));
+ }

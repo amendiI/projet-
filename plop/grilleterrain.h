@@ -5,6 +5,7 @@
 #include "terrain.h"
 #include "option.h"
 #include "segment.h"
+#include "fct.h"
 
 class Grilleterrain
 {
@@ -17,6 +18,8 @@ public:
     void creeriviere();
     void creecrevasse(Point p);
     bool est_traversable(int x,int y);
+    char getypeterrain(int i,int j){return tabterrain[i][j]->gettype();}
+    void changeterrain(int i,int j){tabterrain[i][j]->setimage();}//pour debug
 private:
     terrain* tabterrain[W/5][H/5];
 };

@@ -58,8 +58,7 @@ void Grilleterrain::creearbre(Point p)
         for(j=p.gety()-r;j<p.gety()+r;j++)
         {
             if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
-            && i>0 && j>0
-            && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
+            && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
             {
                 tabterrain[i][j]->setterrain('a',true,1,IMG_arbre,true);
@@ -77,8 +76,7 @@ void Grilleterrain::creerocher(Point p)
         for(j=p.gety()-r;j<p.gety()+r;j++)
         {
             if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
-            && i>0 && j>0
-            && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
+            && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
             {
                 tabterrain[i][j]->setterrain('r',true,7,IMG_rocher,true);
@@ -95,8 +93,7 @@ void Grilleterrain::creerocher(Point p)
         for(j=p.gety()-r;j<p.gety()+r;j++)
         {
             if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
-            && i>0 && j>0
-            && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
+            && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
             {
                 tabterrain[i][j]->setterrain('r',true,7,IMG_rocher,true);
@@ -119,8 +116,7 @@ void Grilleterrain::creeriviere()
             for(int j=p.gety()-r;j<p.gety()+r;j++)
             {
                 if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
-                && i>0 && j>0
-                && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
+                && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
                 && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
                 {
                     tabterrain[i][j]->setterrain('r',true,1,IMG_eau,false);
@@ -141,8 +137,7 @@ void Grilleterrain::creecrevasse(Point p)
         for(j=p.gety()-r;j<p.gety()+r;j++)
         {
             if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
-            && i>0 && j>0
-            && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
+            && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
             {
                 tabterrain[i][j]->setterrain('a',false,1,IMG_crevasse,false);

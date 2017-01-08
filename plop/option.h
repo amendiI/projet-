@@ -23,8 +23,11 @@
 #define IMG_eau ":/images/river1.png"
 #define IMG_tank1 ":/images/Tank.png"
 
-//definitiond de la taille de l'écran
+//definition de la taille de l'écran
 #define W 800
 #define H 600
+
+
+
 
 #endif // OPTION_H

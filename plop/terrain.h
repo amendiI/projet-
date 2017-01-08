@@ -29,6 +29,7 @@ public:
     int getresistance()const;
     bool getbloqueobus()const;
     void setterrain(const char t,const bool b,const int r,const char* image,const bool boqueobus);//setter
+    void setimage();//pour le debug
 };
 
 #endif // TERRAIN_H

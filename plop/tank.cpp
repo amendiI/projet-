@@ -150,11 +150,13 @@ bool Tank::peutBouger(Grilleterrain *tab)
     {
         for(int j=0;j<9;j++)
         {
-            cout<<hitbox(i,j)<<";"<<tab->est_traversable(x+i,y+j)<<"|";
+
             if(hitbox(i,j) && tab->est_traversable(x+i,y+j))
             {
                 cout<<endl;
-                cout<<i<<";"<<j<<endl;
+                cout<<x+i<<";"<<y+j<<endl;
+                cout<<tab->getypeterrain(x+i,y+j)<<endl;
+                tab->changeterrain(x+1,y+1);
                 return false;
             }
         }
