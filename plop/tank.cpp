@@ -3,6 +3,8 @@
 
 Tank::Tank(Grilleterrain *grille, string nomTank, Point pos)
 {
+    obus2=10;
+    obus3=5;
     setPos(pos.getx(),pos.gety());
     tourelle= new Tourelle(nomTank);
     if(nomTank=="tiger")
