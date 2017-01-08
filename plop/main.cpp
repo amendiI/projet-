@@ -35,12 +35,8 @@ int main(int argc,char** argv)
 
     Tank* tank = new Tank(grille,"tiger",Point(100,100),scene);
     tank->afficheTank(scene);
-<<<<<<< HEAD
     Hud* hud = new Hud(tank);
     hud->afficheHud(scene);
-=======
-//
->>>>>>> refs/remotes/origin/branche-test
 
 
     vue->show();
