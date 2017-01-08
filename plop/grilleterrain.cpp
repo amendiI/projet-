@@ -22,19 +22,19 @@ void Grilleterrain::initterrain()
 
     creeriviere();
 
-    for(int i=0;i<30;i++)
+    for(int i=0;i<2;i++)
     {
         p.setx(aleat(W/5));
         p.sety(aleat(H/5));
         creearbre(p);
     }
-    for(int i=0;i<20;i++)
+    for(int i=0;i<2;i++)
     {
         p.setx(aleat(W/5));
         p.sety(aleat(H/5));
         creerocher(p);
     }
-    for(int i=0;i<10;i++)
+    for(int i=0;i<2;i++)
     {
         p.setx(aleat(W/5));
         p.sety(aleat(H/5));
