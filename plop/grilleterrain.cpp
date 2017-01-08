@@ -62,7 +62,7 @@ void Grilleterrain::creearbre(Point p)
             && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
             {
-                tabterrain[i][j]->setterrain('a',false,1,IMG_arbre,true);
+                tabterrain[i][j]->setterrain('a',true,1,IMG_arbre,true);
             }
         }
     }
@@ -81,7 +81,7 @@ void Grilleterrain::creerocher(Point p)
             && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
             {
-                tabterrain[i][j]->setterrain('r',false,7,IMG_rocher,true);
+                tabterrain[i][j]->setterrain('r',true,7,IMG_rocher,true);
             }
         }
     }
@@ -99,7 +99,7 @@ void Grilleterrain::creerocher(Point p)
             && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
             {
-                tabterrain[i][j]->setterrain('r',false,7,IMG_rocher,true);
+                tabterrain[i][j]->setterrain('r',true,7,IMG_rocher,true);
             }
         }
     }
@@ -123,7 +123,7 @@ void Grilleterrain::creeriviere()
                 && i<W/5 && j<H/5	/*test si le carré ne deborde pas de l'ecran*/
                 && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
                 {
-                    tabterrain[i][j]->setterrain('r',false,1,IMG_eau,false);
+                    tabterrain[i][j]->setterrain('r',true,1,IMG_eau,false);
                 }
             }
         }
