@@ -1,14 +1,15 @@
 #ifndef TIR_H
 #define TIR_H
-
+#include <QGraphicsPixmapItem>
+#include <QGraphicsScene>
 #include "math.h"
 #include "point.h"
 #include "option.h"
-#include "time.h"
 
 class Tir
 {
 private:
+    QGraphicsPixmapItem obus;
     Point posobus;
     Point posinit;
     Point posarrive;
@@ -23,7 +24,7 @@ private:
 public:
     Tir(Point posinit, Point posarrive,int angle,int anglec,int typeobus);
     ~Tir();
-    int trajectoire();
+    int trajectoire(QGraphicsScene *scene);
     void impact();
 
 };

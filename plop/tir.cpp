@@ -10,6 +10,7 @@ Tir::Tir(Point posinit, Point posarrive ,int angle, int anglec, int typeobus)
     this->typeobus=typeobus;
     this->posinit=posinit;
     this->posarrive=posarrive;
+    this->obus.setPixmap(QPixmap(":/images/shell1.png"));
 
     distance= ((-abs(anglec-45)+45)/45)*W/3;
 
@@ -25,7 +26,7 @@ Tir::~Tir()
 
 }
 
-int Tir::trajectoire()
+int Tir::trajectoire(QGraphicsScene* scene)
 {
     int x,y;
     x=posarrive.getx();
@@ -33,8 +34,7 @@ int Tir::trajectoire()
 
     bool en_cours=true;
     float compteur=0;
-
-
+    scene->addItem(&obus);
     while(en_cours)
     {
         compteur+=coefdir;
@@ -43,11 +43,13 @@ int Tir::trajectoire()
         {
             compteur-=1;
             posobus.sety(posobus.gety()+1);
+            obus.setPos(obus.x(),posobus.gety()*5);
             if(posobus.getx()==posarrive.getx()||posobus.gety()==posarrive.gety())
                 impact();
             attendre(200);
         }
         posobus.setx(posobus.getx()+1);
+        obus.setPos(posobus.getx()*5,obus.y());
         if(posobus.getx()==posarrive.getx()||posobus.gety()==posarrive.gety())
             impact();
         attendre(200);
