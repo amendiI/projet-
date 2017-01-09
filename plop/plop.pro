@@ -39,5 +39,6 @@ HEADERS  += \
 RESOURCES += \
     res.qrc
 
-DISTFILES +=
+DISTFILES += \
+    Rapport.odt
 

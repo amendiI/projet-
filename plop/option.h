@@ -17,6 +17,7 @@
 
 //chemin des images
 #define IMG_default ":/images/default1.png"
+#define IMG_default2 ":/images/default2.png"
 #define IMG_arbre ":/images/tree1.png"
 #define IMG_arbre2 ":/images/tree2.png"
 #define IMG_rocher ":/images/rock1.png"

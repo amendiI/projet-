@@ -4,12 +4,20 @@
 
 Grilleterrain::Grilleterrain(QGraphicsScene* scene)
 {
+    int var_terrain;
     for(int i=0;i<W/5;i++)
     {
         for(int j=0;j<H/5;j++)
         {
+            var_terrain=aleat(2);
             tabterrain[i][j]=new terrain('d',false,0,false);
-            tabterrain[i][j]->setPixmap(QPixmap(IMG_default));
+
+            if(var_terrain)
+            {
+                tabterrain[i][j]->setPixmap(QPixmap(IMG_default2));
+            }
+            else tabterrain[i][j]->setPixmap(QPixmap(IMG_default));
+
             tabterrain[i][j]->setOffset(i*5,j*5);
             scene->addItem(tabterrain[i][j]);
         }
@@ -52,12 +60,13 @@ void Grilleterrain::initterrain()
 void Grilleterrain::creearbre(Point p)
 {
     int r=aleat(4,7);
-    int var_terrain=aleat(2);
+    int var_terrain;
     int i,j;
     for(i=p.getx()-r;i<p.getx()+r;i++)
     {
         for(j=p.gety()-r;j<p.gety()+r;j++)
         {
+            int var_terrain=aleat(2);
             if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
             && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
@@ -75,13 +84,14 @@ void Grilleterrain::creearbre(Point p)
 
 void Grilleterrain::creerocher(Point p)
 {
-    int var_terrain=aleat(3);
+    int var_terrain;
     int r=aleat(3,7);
     int i,j;
     for(i=p.getx()-r;i<p.getx()+r;i++)
     {
         for(j=p.gety()-r;j<p.gety()+r;j++)
         {
+            int var_terrain=aleat(3);
             if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
             && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
@@ -123,7 +133,7 @@ void Grilleterrain::creerocher(Point p)
 
 void Grilleterrain::creeriviere()
 {
-    int var_terrain=aleat(2);
+    int var_terrain;
     Point p;
     p.setx(aleat(W/5));
     p.sety(0);
@@ -135,6 +145,7 @@ void Grilleterrain::creeriviere()
         {
             for(int j=p.gety()-r;j<p.gety()+r;j++)
             {
+                int var_terrain=aleat(2);
                 if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
                 && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
                 && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
