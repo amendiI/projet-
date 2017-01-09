@@ -148,6 +148,7 @@ void Tank::keyPressEvent(QKeyEvent *event)
             if(aff_rot<0)aff_rot=aff_rot+360;
             hud->setHudAngleTourelle(aff_rot);
         }
+        else()
         c->~Tank();
     }
 }

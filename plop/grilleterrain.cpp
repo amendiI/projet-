@@ -82,6 +82,30 @@ void Grilleterrain::creearbre(Point p)
     }
 }
 
+void Grilleterrain::creedefault(Point p)
+{
+    int r=aleat(9);
+    int var_terrain;
+    int i,j;
+    for(i=p.getx()-r;i<p.getx()+r;i++)
+    {
+        for(j=p.gety()-r;j<p.gety()+r;j++)
+        {
+            int var_terrain=aleat(2);
+            if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
+            && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
+            && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
+            {
+                if(var_terrain)
+                {
+                    tabterrain[i][j]->setterrain('d',false,0,IMG_default2,false);
+                }
+                else tabterrain[i][j]->setterrain('d',false,0,IMG_default,false);
+
+            }
+        }
+    }
+}
 void Grilleterrain::creerocher(Point p)
 {
     int var_terrain;
@@ -212,7 +236,7 @@ void Grilleterrain::impact(Point p,int type)
             {
                 tabterrain[i][j]->setresistance(tabterrain[i][j]->getresistance()-degats);
                 if(tabterrain[i][j]->getresistance()<0)
-                    tabterrain[i][j]->setterrain('a',false,1,IMG_crevasse,false);
+                    tabterrain[i][j]->setterrain('a',true,1,IMG_crevasse,false);
             }
         }
     }

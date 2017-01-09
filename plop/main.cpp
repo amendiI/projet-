@@ -32,6 +32,10 @@ int main(int argc,char** argv)
     Hud* hud2=new Hud(2);
     Tank* tank = new Tank(grille,"tiger",Point(100,100),scene,hud);
     Tank* tank2 = new Tank(grille,"kv1",Point(W-100,H-100),scene,hud2);
+
+    grille->creedefault(tank->getcentre());
+    grille->creedefault(tank2->getcentre());
+
     tank2->setRotation(tank2->rotation()+180);
     tank2->getTourelle()->setRotation(tank2->getTourelle()->rotation()+180);
     tank->afficheTank(scene);

@@ -15,6 +15,7 @@ public:
 
     void creearbre(Point p);
     void creerocher(Point p);
+    void creedefault(Point p);
     void creeriviere();
     void creecrevasse(Point p);
     bool est_traversable(int x,int y);
