@@ -53,6 +53,11 @@ int Tank::getobus3()
     return obus3;
 }
 
+bool Tank::estVivant()
+{
+    return true;
+}
+
 void Tank::keyPressEvent(QKeyEvent *event)
 {
     int cx=centre.getx();
@@ -145,7 +150,7 @@ void Tank::keyPressEvent(QKeyEvent *event)
             tourelle->setPos(c->tourelle->pos());
             setPos(c->pos());
             centre=c->centre;
-            //pm--;
+            pm--;
             hud->setHudPm(pm);
             aff_rot=tourelle->rotation();
             aff_rot=aff_rot%360;

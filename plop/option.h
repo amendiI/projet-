@@ -18,10 +18,13 @@
 //chemin des images
 #define IMG_default ":/images/default1.png"
 #define IMG_arbre ":/images/tree1.png"
+#define IMG_arbre2 ":/images/tree2.png"
 #define IMG_rocher ":/images/rock1.png"
+#define IMG_rocher2 ":/images/rock2.png"
+#define IMG_rocher3 ":/images/rock3.png"
 #define IMG_crevasse ":/images/crack1.png"
 #define IMG_eau ":/images/river1.png"
-#define IMG_tank1 ":/images/Tank.png"
+#define IMG_eau2 ":/images/river2.png"
 
 //definition de la taille de l'écran
 #define W 800

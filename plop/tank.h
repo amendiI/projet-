@@ -41,7 +41,7 @@ public:
     int getobus2();
     int getobus3();
     bool hitbox(Point p);
-
+    bool estVivant();
     void keyPressEvent(QKeyEvent* event);
     void setAngle(int x){angle=x;}
     void setPm(int x){pm=x;}

@@ -52,6 +52,7 @@ void Grilleterrain::initterrain()
 void Grilleterrain::creearbre(Point p)
 {
     int r=aleat(4,7);
+    int var_terrain=aleat(2);
     int i,j;
     for(i=p.getx()-r;i<p.getx()+r;i++)
     {
@@ -61,7 +62,12 @@ void Grilleterrain::creearbre(Point p)
             && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
             {
-                tabterrain[i][j]->setterrain('a',true,1,IMG_arbre,true);
+                if(var_terrain)
+                {
+                    tabterrain[i][j]->setterrain('a',true,1,IMG_arbre2,true);
+                }
+                else tabterrain[i][j]->setterrain('a',true,1,IMG_arbre,true);
+
             }
         }
     }
@@ -69,6 +75,7 @@ void Grilleterrain::creearbre(Point p)
 
 void Grilleterrain::creerocher(Point p)
 {
+    int var_terrain=aleat(3);
     int r=aleat(3,7);
     int i,j;
     for(i=p.getx()-r;i<p.getx()+r;i++)
@@ -79,7 +86,19 @@ void Grilleterrain::creerocher(Point p)
             && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
             && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
             {
-                tabterrain[i][j]->setterrain('r',true,7,IMG_rocher,true);
+                switch (var_terrain) {
+                case 0:
+                    tabterrain[i][j]->setterrain('r',true,7,IMG_rocher,true);
+                    break;
+                case 1:
+                    tabterrain[i][j]->setterrain('r',true,7,IMG_rocher2,true);
+                    break;
+                case 2:
+                    tabterrain[i][j]->setterrain('r',true,7,IMG_rocher3,true);
+                    break;
+                default:
+                    break;
+                }
             }
         }
     }
@@ -104,6 +123,7 @@ void Grilleterrain::creerocher(Point p)
 
 void Grilleterrain::creeriviere()
 {
+    int var_terrain=aleat(2);
     Point p;
     p.setx(aleat(W/5));
     p.sety(0);
@@ -119,7 +139,12 @@ void Grilleterrain::creeriviere()
                 && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
                 && 'd'==tabterrain[i][j]->gettype())/*test si la case est nulle*/
                 {
-                    tabterrain[i][j]->setterrain('r',true,1,IMG_eau,false);
+                    if(var_terrain)
+                    {
+                        tabterrain[i][j]->setterrain('r',true,1,IMG_eau2,false);
+                    }
+                    else tabterrain[i][j]->setterrain('r',true,1,IMG_eau,false);
+
                 }
             }
         }
