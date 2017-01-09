@@ -63,7 +63,7 @@ int main(int argc,char** argv)
         {
             gagne.setPlainText(QString("Joueur 1 (Tiger) a gagné !"));
         }
-        else gagne.setPlainText(QString("Joueur 1 (Tiger) a gagné !"));
+        else gagne.setPlainText(QString("Joueur 2 (KV1-S) a gagné !"));
         scene->addItem(&gagne);
     }
 
