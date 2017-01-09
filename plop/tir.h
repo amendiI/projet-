@@ -2,11 +2,12 @@
 #define TIR_H
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
+
 #include "math.h"
 #include "point.h"
 #include "option.h"
 
-class Tir
+class Tir:QObject
 {
 private:
     QGraphicsPixmapItem obus;
@@ -24,8 +25,9 @@ private:
 public:
     Tir(Point posinit, int angle, int anglec, int typeobus);
     ~Tir();
-    int trajectoire(QGraphicsScene *scene);
-    void impact();
+    //int trajectoire(QGraphicsScene *scene);
+    void impact(Point p);
+    void mouvement_obus();
 
 };
 
