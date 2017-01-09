@@ -24,7 +24,6 @@ int main(int argc,char** argv)
     QGraphicsScene* scene= new QGraphicsScene();
     QGraphicsView* vue= new QGraphicsView(scene);
     Grilleterrain* grille= new Grilleterrain(scene);
-    int tour=0;
     vue->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     vue->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
@@ -40,20 +39,17 @@ int main(int argc,char** argv)
     hud->afficheHud(scene);
     hud2->afficheHud(scene);
 
-    vue->show();
     vue->setFixedSize(W,H);
     scene->setSceneRect(0,0,W,H);
+    vue->setScene(scene);
+    vue->show();
 
-    if(tank->estVivant()&&tank2->estVivant())
+
+    while(tank2->estVivant()&&tank->estVivant())
     {
-        if(tour%2)
-        {
-            tank2->deplacement();
-        }
-        else tank->deplacement();
+        tank2->deplacement();
+        if(tank->estVivant())tank->deplacement();
     }
-    else
-    {
         QGraphicsTextItem gagne;
         gagne.setTextInteractionFlags(Qt::NoTextInteraction);
         gagne.setPos(310,300);
@@ -65,10 +61,6 @@ int main(int argc,char** argv)
         }
         else gagne.setPlainText(QString("Joueur 2 (KV1-S) a gagné !"));
         scene->addItem(&gagne);
-    }
-
-
-    vue->setScene(scene);
 
     return a.exec();
 }

@@ -21,6 +21,8 @@ class Tourelle : public QGraphicsPixmapItem
 private:
     int angle_tourelle;
     int angle_canon;
+    int obus2;
+    int obus3;
     string type;
     QGraphicsScene* scene;
     Hud* hud;
@@ -36,6 +38,8 @@ public:
     int get_angle_tourelle(){return angle_tourelle;}
     int get_angle_canon(){return angle_canon;}
 
+    int getobus2();
+    int getobus3();
 };
 
 #endif // TOURELLE_H

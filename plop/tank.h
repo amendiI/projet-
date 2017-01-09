@@ -23,14 +23,13 @@ class Tank: public QGraphicsPixmapItem
 {
 private:
     Tourelle *tourelle;
-    int obus2;
-    int obus3;
     int angle;
     int pm;
     Point centre;
     Grilleterrain* tab;
     Hud* hud;
     QGraphicsScene *scene;
+    string nomTank;
 
 public:
     Tank(Grilleterrain* grille, string nomTank, Point pos, QGraphicsScene *scene, Hud *mainhud);
@@ -38,8 +37,6 @@ public:
     void afficheTank(QGraphicsScene *scene);
     void visee();
     void deplacement();
-    int getobus2();
-    int getobus3();
     bool hitbox(Point p);
     bool estVivant();
     void keyPressEvent(QKeyEvent* event);

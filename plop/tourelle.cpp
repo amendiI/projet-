@@ -3,6 +3,8 @@
 Tourelle::Tourelle(string nomTank, QGraphicsScene *scene, Hud *mainhud, Grilleterrain *tab,Point centre)
 {
     type=nomTank;
+    obus2=10;
+    obus3=5;
     if(type=="tiger")
     {
         setPixmap(QPixmap(":/images/tigertourelle.png"));
@@ -44,11 +46,25 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
     {
         if(angle_canon>0)angle_canon--;
     }
-    else if(event->key() ==Qt::Key_Space)
+    else if(event->key()==Qt::Key_1||event->key()==Qt::Key_2||event->key()==Qt::Key_3)
     {
-        Tir* t=new Tir(centre,rotation(),angle_canon,3,tab);
-
+        if(event->key()==Qt::Key_1)
+        {
+            Tir* t=new Tir(centre,rotation(),angle_canon,3,tab);
+        }
+        else if(event->key()==Qt::Key_2)
+        {
+            Tir* t=new Tir(centre,rotation(),angle_canon,3,tab);
+            hud->setHudObus2(obus2-1);
+        }
+        else if(event->key()==Qt::Key_3)
+        {
+            Tir* t=new Tir(centre,rotation(),angle_canon,3,tab);
+            hud->setHudObus3(obus3-1);
+        }
         t->trajectoire(scene);
+        clearFocus();
+
     }
     if(type=="tiger")
     {
@@ -133,4 +149,12 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
     this->hud->setHudAngleCanon(angle_canon);
 }
 
+int Tourelle::getobus2()
+{
+    return obus2;
+}
 
+int Tourelle::getobus3()
+{
+    return obus3;
+}

@@ -1,15 +1,14 @@
 #include "tank.h"
 #include "hitbox.h"
 
-Tank::Tank(Grilleterrain *grille, string nomTank, Point pos, QGraphicsScene *scene,Hud* mainhud)
+Tank::Tank(Grilleterrain *grille, string nomDuTank, Point pos, QGraphicsScene *scene,Hud* mainhud)
 {
     tab=grille;
-    obus2=10;
-    obus3=5;
     setPos(pos.getx(),pos.gety());
     centre.setx(x()/5-4);
     centre.sety(y()/5-6);
-    tourelle= new Tourelle(nomTank,scene,mainhud,tab,Point(((x()+22)/5),((y()+12)/5)));
+    nomTank=nomDuTank;
+    tourelle= new Tourelle(nomDuTank,scene,mainhud,tab,Point(((x()+22)/5),((y()+12)/5)));
     if(nomTank=="tiger")
     {
         setPixmap(QPixmap(":/images/tigercaisse.png"));
@@ -30,8 +29,6 @@ Tank::Tank(Grilleterrain *grille, string nomTank, Point pos, QGraphicsScene *sce
 
     hud=mainhud;
     hud->setHudPm(pm);
-    hud->setHudObus2(obus2);
-    hud->setHudObus3(obus3);
 }
 
 Tank::~Tank()
@@ -45,18 +42,9 @@ void Tank::afficheTank(QGraphicsScene* scene)
     scene->addItem(getTourelle());
 }
 
-int Tank::getobus2()
-{
-    return obus2;
-}
-
-int Tank::getobus3()
-{
-    return obus3;
-}
-
 bool Tank::estVivant()
 {
+    if(nomTank=="tiger")
     return true;
 }
 
