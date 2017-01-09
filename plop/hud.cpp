@@ -1,12 +1,8 @@
 #include "hud.h"
 
-Hud::Hud()
+Hud::Hud(int joueur)
 {
-    pm=0;
-    obus2=0;
-    obus3=0;
-    angle_tourelle=0;
-    angle_canon=0;
+
     aff_pm.setPlainText(QString("pm :"+conversion.number(pm)));
     aff_obus2.setPlainText(QString("obus 2 :"+conversion.number(obus2)));
     aff_obus3.setPlainText(QString("obus 3 :"+conversion.number(obus3)));
@@ -32,11 +28,11 @@ Hud::Hud()
     aff_angle_tourelle.setTextWidth(200);
     aff_angle_canon.setTextWidth(200);
 
-    aff_pm.setPos(25,25);
-    aff_obus2.setPos(aff_pm.x(),aff_pm.y()+50);
-    aff_obus3.setPos(aff_pm.x(),aff_obus2.y()+50);
-    aff_angle_tourelle.setPos(aff_pm.x(),aff_obus3.y()+50);
-    aff_angle_canon.setPos(aff_pm.x(),aff_angle_tourelle.y()+50);
+    aff_pm.setPos(700*(joueur-1)+25,25);
+    aff_obus2.setPos(aff_pm.x(),aff_pm.y()+25);
+    aff_obus3.setPos(aff_pm.x(),aff_obus2.y()+25);
+    aff_angle_tourelle.setPos(aff_pm.x(),aff_obus3.y()+25);
+    aff_angle_canon.setPos(aff_pm.x(),aff_angle_tourelle.y()+25);
 }
 
 void Hud::afficheHud(QGraphicsScene* scene)

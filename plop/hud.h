@@ -24,7 +24,7 @@ private:
     QString conversion;
 
 public:
-    Hud();
+    Hud(int joueur);
     void afficheHud(QGraphicsScene *scene);
     void setHudPm(int newpm);
     void setHudObus2(int newobus2);
