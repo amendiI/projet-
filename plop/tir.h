@@ -23,6 +23,10 @@ private:
     float coefdir;
     int distance;
 
+    //pour le chrono
+    float compteur;
+    QTimer* timer;
+
 
 public:
     Tir(Point posinit, int angle, int anglec, int typeobus);
@@ -30,8 +34,6 @@ public:
     int trajectoire(QGraphicsScene *scene);
     void impact(Point p);
     void mouvement_obus();
-
-    void mouvement_obus(float *compteur, QTimer *timer);
 };
 
 #endif // TIR_H

@@ -24,9 +24,7 @@ Tir::Tir(Point posinit,int angle, int anglec, int typeobus)
 
     ordori=-coefdir*posarrive.getx()+posarrive.gety();
 
-    cout<<distance<<endl;
     cout<<posarrive.getx()<<";"<<posarrive.gety()<<endl;
-    cout<<coefdir<<endl;
 }
 
 Tir::~Tir()
@@ -36,11 +34,12 @@ Tir::~Tir()
 
 int Tir::trajectoire(QGraphicsScene* scene)
 {
-    float* compteur;
-    *compteur=0;
 
-    QTimer* timer=new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(mouvement_obus(compteur,timer)));
+    compteur=0;
+
+
+    timer=new QTimer();
+    connect(timer,SIGNAL(timeout()),this,SLOT(mouvement_obus()));
     timer->start();
 
 
@@ -49,7 +48,7 @@ int Tir::trajectoire(QGraphicsScene* scene)
 
     while(timer->isActive())
     {
-        cout<<"do nothing"<<endl;
+
     }
     impact(posobus);
 
@@ -61,16 +60,16 @@ void Tir::impact(Point p)
 
 }
 
-void Tir::mouvement_obus(float* compteur,QTimer* timer)
+void Tir::mouvement_obus()
 {
-        *compteur+=coefdir;
+        compteur+=coefdir;
 
-        while(abs(*compteur)>1)
+        while(abs(compteur)>1)
         {
-            if(*compteur>0)
-                *compteur-=1;
+            if(compteur>0)
+                compteur-=1;
             else
-                *compteur+=1;
+                compteur+=1;
 
             posobus.sety(posobus.gety()+1);
             obus.setPos(posobus.getx()*5,posobus.gety()*5);
