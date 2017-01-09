@@ -29,6 +29,7 @@ public:
     void keyPressEvent(QKeyEvent* event);
     void set_angle_tourelle(int x){angle_tourelle=x;}
     void set_angle_canon(int x){angle_canon=x;}
+    string getType(){return type;}
     int get_angle_tourelle(){return angle_tourelle;}
     int get_angle_canon(){return angle_canon;}
 

@@ -60,6 +60,7 @@ void Tank::keyPressEvent(QKeyEvent *event)
     int xp=0;
     int yp=0;
     int ap=0;
+    int aff_rot;
     int op=angle;
     Tank* c=new Tank(tab,"tiger",Point(x(),y()),scene,hud);
 
@@ -122,6 +123,10 @@ void Tank::keyPressEvent(QKeyEvent *event)
         {
             clearFocus();
             tourelle->setFocus();
+           /* if(tourelle->getType()=="kv1")
+            {
+                tourelle->setTransformOriginPoint(x()+19,y()+12);
+            } */
         }
 
         c->setAngle(op);
@@ -142,8 +147,10 @@ void Tank::keyPressEvent(QKeyEvent *event)
             centre=c->centre;
             //pm--;
             hud->setHudPm(pm);
-            hud->setHudAngleTourelle(tourelle->rotation());
-
+            aff_rot=tourelle->rotation();
+            aff_rot=aff_rot%360;
+            if(aff_rot<0)aff_rot=aff_rot+360;
+            hud->setHudAngleTourelle(aff_rot);
         }
         c->~Tank();
     }

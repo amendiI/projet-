@@ -2,11 +2,11 @@
 
 Hud::Hud()
 {
-    /*pm=0;
+    pm=0;
     obus2=0;
     obus3=0;
     angle_tourelle=0;
-    angle_canon=0;*/
+    angle_canon=0;
     aff_pm.setPlainText(QString("pm :"+conversion.number(pm)));
     aff_obus2.setPlainText(QString("obus 2 :"+conversion.number(obus2)));
     aff_obus3.setPlainText(QString("obus 3 :"+conversion.number(obus3)));
@@ -46,4 +46,36 @@ void Hud::afficheHud(QGraphicsScene* scene)
     scene->addItem(&aff_obus3);
     scene->addItem(&aff_angle_tourelle);
     scene->addItem(&aff_angle_canon);
+}
+
+void Hud::setHudPm(int newpm)
+{
+    pm=newpm;
+    aff_pm.setPlainText(QString("pm :"+conversion.number(pm)));
+}
+
+void Hud::setHudObus2(int newobus2)
+{
+    obus2=newobus2;
+    aff_obus2.setPlainText(QString("obus 2 :"+conversion.number(obus2)));
+
+}
+
+void Hud::setHudObus3(int newobus3)
+{
+    obus3=newobus3;
+    aff_obus3.setPlainText(QString("obus 3 :"+conversion.number(obus3)));
+
+}
+
+void Hud::setHudAngleTourelle(int newangletourelle)
+{
+    angle_tourelle=newangletourelle;
+    aff_angle_tourelle.setPlainText(QString("tourelle :"+conversion.number(angle_tourelle)));
+}
+
+void Hud::setHudAngleCanon(int newanglecanon)
+{
+    angle_canon=newanglecanon;
+    aff_angle_canon.setPlainText(QString("canon :"+conversion.number(angle_canon)));
 }

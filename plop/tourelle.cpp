@@ -24,12 +24,7 @@ Tourelle::Tourelle(string nomTank, QGraphicsScene *scene, Hud *mainhud)
 
 void Tourelle::keyPressEvent(QKeyEvent *event)
 {
-    if(type=="kv1")
-    {
-        setPixmap((QPixmap(":/images/kv1tourelle.png")));
-        setTransformOriginPoint(46,12);
-    }
-
+    int aff_rot;
     if(event->key() ==Qt::Key_D)
     {
         setRotation(rotation()+1);
@@ -95,7 +90,7 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
         switch (angle_canon/10)
         {
         case 0:
-            setPixmap(QPixmap(":/images/tigertourelle.png"));
+            setPixmap(QPixmap(":/images/kv1tourelle.png"));
             break;
         case 1:
             setPixmap(QPixmap(":/images/kv1tourelle10.png"));
@@ -128,7 +123,10 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
             break;
         }
     }
-    this->hud->setHudAngleTourelle(rotation());
+    aff_rot=rotation();
+    aff_rot=aff_rot%360;
+    if(aff_rot<0)aff_rot=aff_rot+360;
+    this->hud->setHudAngleTourelle(aff_rot);
     this->hud->setHudAngleCanon(angle_canon);
 }
 

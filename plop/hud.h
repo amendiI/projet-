@@ -26,11 +26,11 @@ private:
 public:
     Hud();
     void afficheHud(QGraphicsScene *scene);
-    void setHudPm(int newpm){pm=newpm;}
-    void setHudObus2(int newobus2){pm=newobus2;}
-    void setHudObus3(int newobus3){pm=newobus3;}
-    void setHudAngleTourelle(int newangletourelle){pm=newangletourelle;}
-    void setHudAngleCanon(int newanglecanon){pm=newanglecanon;}
+    void setHudPm(int newpm);
+    void setHudObus2(int newobus2);
+    void setHudObus3(int newobus3);
+    void setHudAngleTourelle(int newangletourelle);
+    void setHudAngleCanon(int newanglecanon);
 };
 
 #endif // HUD_H
