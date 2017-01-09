@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std ;
 
-Tir::Tir(Point posinit,int angle, int anglec, int typeobus)
+Tir::Tir(Point posinit,int angle, int anglec, int typeobus,Grilleterrain* tab)
 {
     this->angle=angle;
     this->anglec=anglec;
@@ -11,7 +11,7 @@ Tir::Tir(Point posinit,int angle, int anglec, int typeobus)
     this->posinit=posinit;
     this->posarrive=posarrive;
     this->posobus=posinit;
-    this->obus.setPixmap(QPixmap(":/images/shell1.png"));
+    this->tab=tab;
 
     distance= (-abs(anglec-25)+45);
 
@@ -36,32 +36,10 @@ int Tir::trajectoire(QGraphicsScene* scene)
 {
 
     compteur=0;
-
-
-    timer=new QTimer();
-    connect(timer,SIGNAL(timeout()),this,SLOT(mouvement_obus()));
-    timer->start();
-
-
-    scene->addItem(&obus);
-    timer->start(200);
-
-    while(timer->isActive())
+    bool en_cours=true;
+    cout<<"depart"<<endl;
+    while(en_cours)
     {
-
-    }
-    impact(posobus);
-
-    return 0;
-}
-
-void Tir::impact(Point p)
-{
-
-}
-
-void Tir::mouvement_obus()
-{
         compteur+=coefdir;
 
         while(abs(compteur)>1)
@@ -70,23 +48,39 @@ void Tir::mouvement_obus()
                 compteur-=1;
             else
                 compteur+=1;
-
+            cout<<"changey"<<endl;
             posobus.sety(posobus.gety()+1);
-            obus.setPos(posobus.getx()*5,posobus.gety()*5);
-            cout<<obus.x()<<";"<<obus.y()<<endl;
-            if(posobus.getx()==posarrive.getx()&&posobus.gety()==posarrive.gety())
-            {
-                timer->stop();
-                return;
-            }
+            if(posobus.getx()== posarrive.getx()&& posobus.gety()== posarrive.gety())//si l'obus arrive a la fin de son voyage
+                en_cours= false;
+            cout<<"opo"<<endl;
+
         }
+
         posobus.setx(posobus.getx()+1);
-        obus.setPos(posobus.getx()*5,posobus.gety()*5);
-        if(posobus.getx()==posarrive.getx()&&posobus.gety()==posarrive.gety())
-        {
-            timer->stop();
-            return;
-        }
+        //en_cours=testfin();
+        if(posobus.getx()== posarrive.getx()&& posobus.gety()== posarrive.gety())//si l'obus arrive a la fin de son voyage
+            en_cours= false;
+    }
+
+
+    cout<<"fin en "<<posobus.getx()<<";"<<posobus.gety()<<endl;
+    impact(posobus);
+
+return 0;
+}
+
+void Tir::impact(Point p)
+{
+    tab->changeterrain(p.getx(),p.gety());
+}
+
+bool Tir::testfin()
+{
+    if(posobus.getx()== posarrive.getx()&& posobus.gety()== posarrive.gety())//si l'obus arrive a la fin de son voyage
+        return false;
+    //if(tab->nontraversableobus(posobus))//si l'obus n'es pas bloqué par le terrain
+    //    return false;
+    return true;
 
 }
 

@@ -6,7 +6,7 @@ Tank::Tank(Grilleterrain *grille, string nomTank, Point pos, QGraphicsScene *sce
     obus2=10;
     obus3=5;
     setPos(pos.getx(),pos.gety());
-    tourelle= new Tourelle(nomTank,scene,mainhud);
+    tourelle= new Tourelle(nomTank,scene,mainhud,tab);
     if(nomTank=="tiger")
     {
         setPixmap(QPixmap(":/images/tigercaisse.png"));

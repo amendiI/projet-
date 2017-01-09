@@ -187,3 +187,8 @@ bool Grilleterrain::est_traversable(int x,int y)
 {
     return tabterrain[x][y]->getbloque();
 }
+
+bool Grilleterrain::nontraversableobus(Point p)
+{
+    return tabterrain[p.getx()][p.gety()]->getbloqueobus();
+}

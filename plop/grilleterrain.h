@@ -18,6 +18,7 @@ public:
     void creeriviere();
     void creecrevasse(Point p);
     bool est_traversable(int x,int y);
+    bool nontraversableobus(Point p);
     char getypeterrain(int i,int j){return tabterrain[i][j]->gettype();}
     void changeterrain(int i,int j){tabterrain[i][j]->setimage();}//pour debug
 private:

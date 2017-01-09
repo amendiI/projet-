@@ -24,8 +24,9 @@ private:
     string type;
     QGraphicsScene* scene;
     Hud* hud;
+    Grilleterrain* tab;
 public:
-    Tourelle(string nomTank,QGraphicsScene* scene,Hud* mainhud);
+    Tourelle(string nomTank,QGraphicsScene* scene,Hud* mainhud,Grilleterrain* tab);
     void keyPressEvent(QKeyEvent* event);
     void set_angle_tourelle(int x){angle_tourelle=x;}
     void set_angle_canon(int x){angle_canon=x;}
