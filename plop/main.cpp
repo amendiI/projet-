@@ -49,22 +49,11 @@ int main(int argc,char** argv)
     vue->show();
 
 
-    while(tank2->estVivant()&&tank->estVivant())
-    {
+    //while(!tank2->perdu()&&!tank2->perdu())
+    //{
         tank2->deplacement();
-        if(tank->estVivant())tank->deplacement();
-    }
-        QGraphicsTextItem gagne;
-        gagne.setTextInteractionFlags(Qt::NoTextInteraction);
-        gagne.setPos(310,300);
-        gagne.setTextWidth(200);
-        gagne.setDefaultTextColor(QColor(255,255,255,255));
-        if(tank->estVivant())
-        {
-            gagne.setPlainText(QString("Joueur 1 (Tiger) a gagné !"));
-        }
-        else gagne.setPlainText(QString("Joueur 2 (KV1-S) a gagné !"));
-        scene->addItem(&gagne);
+        tank->deplacement();
+    //}
 
     return a.exec();
 }

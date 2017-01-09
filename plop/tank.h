@@ -38,7 +38,7 @@ public:
     void visee();
     void deplacement();
     bool hitbox(Point p);
-    bool estVivant();
+    bool perdu();
     void keyPressEvent(QKeyEvent* event);
     void setAngle(int x){angle=x;}
     void setPm(int x){pm=x;}
