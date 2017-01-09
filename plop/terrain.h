@@ -26,10 +26,11 @@ public:
 
     char gettype() const;//retourne le type
     bool getbloque() const;//renvoi 1 si le terrain est bloquant
-    int getresistance()const;
+    int getresistance()const{return resistance;}
     bool getbloqueobus()const;
     void setterrain(const char t,const bool b,const int r,const char* image,const bool boqueobus);//setter
     void setimage();//pour le debug
+    void setresistance(const int r){resistance=r;}
 };
 
 #endif // TERRAIN_H

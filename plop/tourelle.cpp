@@ -48,21 +48,23 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key()==Qt::Key_1||event->key()==Qt::Key_2||event->key()==Qt::Key_3)
     {
+        Tir* t;
         if(event->key()==Qt::Key_1)
         {
-            Tir* t=new Tir(centre,rotation(),angle_canon,3,tab);
+            t=new Tir(centre,rotation(),angle_canon,3,tab);
         }
         else if(event->key()==Qt::Key_2)
         {
-            Tir* t=new Tir(centre,rotation(),angle_canon,3,tab);
+            t=new Tir(centre,rotation(),angle_canon,3,tab);
             hud->setHudObus2(obus2-1);
         }
         else if(event->key()==Qt::Key_3)
         {
-            Tir* t=new Tir(centre,rotation(),angle_canon,3,tab);
+            t=new Tir(centre,rotation(),angle_canon,3,tab);
             hud->setHudObus3(obus3-1);
         }
         t->trajectoire(scene);
+
         clearFocus();
 
     }

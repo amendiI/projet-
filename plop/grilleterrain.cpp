@@ -192,3 +192,29 @@ bool Grilleterrain::nontraversableobus(Point p)
 {
     return tabterrain[p.getx()][p.gety()]->getbloqueobus();
 }
+
+void Grilleterrain::impact(Point p,int type)
+{
+    int r=type;
+    int degats=1;
+    if(type==2)
+        degats=4;
+    else
+        degats=10;
+    int i,j;
+    for(i=p.getx()-r;i<p.getx()+r;i++)
+    {
+        for(j=p.gety()-r;j<p.gety()+r;j++)
+        {
+            if(((i-p.getx())*(i-p.getx())+(j-p.gety())*(j-p.gety())-r*r<0)	/*test si le carré est dans le cercle*/
+            && est_dans_ecrant(i,j,W,H)	/*test si le carré ne deborde pas de l'ecran*/
+            )
+            {
+                tabterrain[i][j]->setresistance(tabterrain[i][j]->getresistance()-degats);
+                if(tabterrain[i][j]->getresistance()<0)
+                    tabterrain[i][j]->setterrain('a',false,1,IMG_crevasse,false);
+            }
+        }
+    }
+
+}

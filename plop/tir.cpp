@@ -68,13 +68,9 @@ return 0;
 
 Point Tir::impact(Point p)
 {
-    if(typeobus==1)
-    {
-        tab->creecrevasse(p);
+
+        tab->impact(p,typeobus);
         return p;
-    }
-    tab->changeterrain(posinit.getx(),posinit.gety());
-    tab->changeterrain(posarrive.getx(),posarrive.gety());
 }
 
 bool Tir::testfin()//ne marche pas

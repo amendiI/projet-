@@ -21,6 +21,7 @@ public:
     bool nontraversableobus(Point p);
     char getypeterrain(int i,int j){return tabterrain[i][j]->gettype();}
     void changeterrain(int i,int j){tabterrain[i][j]->setimage();}//pour debug
+    void impact(Point p, int type);
 private:
     terrain* tabterrain[W/5][H/5];
 };
