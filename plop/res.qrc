@@ -24,5 +24,11 @@
         <file>tigertourelle80.png</file>
         <file>tigertourelle90.png</file>
         <file>shell1.png</file>
+        <file>default2.png</file>
+        <file>river2.png</file>
+        <file>rock2.png</file>
+        <file>rock3.png</file>
+        <file>tree2.png</file>
+        <file>hud1.png</file>
     </qresource>
 </RCC>
