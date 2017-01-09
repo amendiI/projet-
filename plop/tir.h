@@ -29,7 +29,7 @@ public:
     Tir(Point posinit, int angle, int anglec, int typeobus, Grilleterrain* tab);
     ~Tir();
     int trajectoire(QGraphicsScene *scene);
-    void impact(Point p, tank t);
+    Point impact(Point p);
     bool testfin();
 };
 

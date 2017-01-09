@@ -66,9 +66,13 @@ int Tir::trajectoire(QGraphicsScene* scene)
 return 0;
 }
 
-void Tir::impact(Point p,tank t)
+Point Tir::impact(Point p)
 {
-    if(posarrive)
+    if(typeobus==1)
+    {
+        tab->creecrevasse(p);
+        return p;
+    }
     tab->changeterrain(posinit.getx(),posinit.gety());
     tab->changeterrain(posarrive.getx(),posarrive.gety());
 }
