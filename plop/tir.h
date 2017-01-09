@@ -19,20 +19,17 @@ private:
     int angle;
     int anglec;
     int typeobus;
-    int ordori;
     float coefdir;
     int distance;
 
-    //pour le chrono
     float compteur;
-    QTimer* timer;
 
 
 public:
     Tir(Point posinit, int angle, int anglec, int typeobus, Grilleterrain* tab);
     ~Tir();
     int trajectoire(QGraphicsScene *scene);
-    void impact(Point p);
+    void impact(Point p, tank t);
     bool testfin();
 };
 

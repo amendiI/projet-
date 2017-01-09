@@ -22,15 +22,6 @@ Tir::Tir(Point posinit,int angle, int anglec, int typeobus,Grilleterrain* tab)
 
 
     coefdir=((float)(posinit.gety()-posarrive.gety()))/((float)(posinit.getx()- posarrive.getx()));
-
-    ordori=-coefdir*posarrive.getx()+posarrive.gety();
-
-    cout<<angle<<endl;
-    cout<<anglec<<endl;
-
-    cout<<coefdir<<endl;
-    cout<<posinit.getx()<<";"<<posinit.gety()<<endl;
-    cout<<posarrive.getx()<<";"<<posarrive.gety()<<endl;
 }
 
 Tir::~Tir()
@@ -75,9 +66,9 @@ int Tir::trajectoire(QGraphicsScene* scene)
 return 0;
 }
 
-void Tir::impact(Point p)
+void Tir::impact(Point p,tank t)
 {
-    tab->creecrevasse(p);
+    if(posarrive)
     tab->changeterrain(posinit.getx(),posinit.gety());
     tab->changeterrain(posarrive.getx(),posarrive.gety());
 }
