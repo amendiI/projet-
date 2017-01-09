@@ -13,7 +13,7 @@ Tir::Tir(Point posinit,int angle, int anglec, int typeobus,Grilleterrain* tab)
     this->posobus=posinit;
     this->tab=tab;
 
-    distance= (-abs(anglec-25)+45);
+    distance= (-abs(anglec-25)+45)*1.5;
 
 
     posarrive.setx(posinit.getx()+((float)distance)*cos(angle*PI/180));
