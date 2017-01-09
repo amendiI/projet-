@@ -2,6 +2,8 @@
 #define TIR_H
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
+#include <QTimer>
+
 
 #include "math.h"
 #include "point.h"
@@ -25,10 +27,11 @@ private:
 public:
     Tir(Point posinit, int angle, int anglec, int typeobus);
     ~Tir();
-    //int trajectoire(QGraphicsScene *scene);
+    int trajectoire(QGraphicsScene *scene);
     void impact(Point p);
     void mouvement_obus();
 
+    void mouvement_obus(float *compteur, QTimer *timer);
 };
 
 #endif // TIR_H

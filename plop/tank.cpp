@@ -166,14 +166,9 @@ bool Tank::peutBouger(Grilleterrain *tab)
     {
         for(int j=0;j<9;j++)
         {
-            tab->changeterrain(x+i,y+j);
             if(hitbox(i,j) &&est_dans_ecrant(i,j,W,H)&&
                     tab->est_traversable(x+i,y+j))
             {
-                cout<<endl;
-                cout<<x+i<<";"<<y+j<<endl;
-                cout<<tab->getypeterrain(x+i,y+j)<<endl;
-                //tab->changeterrain(x+1,y+1);
                 return false;
             }
         }

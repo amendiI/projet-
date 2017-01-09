@@ -33,15 +33,17 @@ Tir::~Tir()
 {
 
 }
-/*
+
 int Tir::trajectoire(QGraphicsScene* scene)
 {
+    float* compteur;
+    *compteur=0;
 
     QTimer* timer=new QTimer();
-    connect(timer,Signal(timeout()),this,SLOT(mouvement_obus()));
-    timer->start;
+    connect(timer,SIGNAL(timeout()),this,SLOT(mouvement_obus(compteur,timer)));
+    timer->start();
 
-    float compteur=0;
+
     scene->addItem(&obus);
     timer->start(200);
 
@@ -50,6 +52,8 @@ int Tir::trajectoire(QGraphicsScene* scene)
         cout<<"do nothing"<<endl;
     }
     impact(posobus);
+
+    return 0;
 }
 
 void Tir::impact(Point p)
@@ -57,32 +61,33 @@ void Tir::impact(Point p)
 
 }
 
-void Tir::mouvement_obus(float compteur,)
+void Tir::mouvement_obus(float* compteur,QTimer* timer)
 {
-        compteur+=coefdir;
+        *compteur+=coefdir;
 
-        while(abs(compteur)>1)
+        while(abs(*compteur)>1)
         {
-            if(compteur>0)
-                compteur-=1;
+            if(*compteur>0)
+                *compteur-=1;
             else
-                compteur+=1;
+                *compteur+=1;
 
             posobus.sety(posobus.gety()+1);
             obus.setPos(posobus.getx()*5,posobus.gety()*5);
             cout<<obus.x()<<";"<<obus.y()<<endl;
             if(posobus.getx()==posarrive.getx()&&posobus.gety()==posarrive.gety())
             {
-                en_cours=false;
+                timer->stop();
+                return;
             }
         }
         posobus.setx(posobus.getx()+1);
         obus.setPos(posobus.getx()*5,posobus.gety()*5);
         if(posobus.getx()==posarrive.getx()&&posobus.gety()==posarrive.gety())
         {
-            en_cours=false;
+            timer->stop();
+            return;
         }
 
 }
-*/
 
