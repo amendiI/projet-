@@ -9,7 +9,7 @@
 #include "point.h"
 #include "option.h"
 
-class Tir:QObject
+class Tir
 {
 private:
     Grilleterrain* tab;

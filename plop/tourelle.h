@@ -25,11 +25,13 @@ private:
     QGraphicsScene* scene;
     Hud* hud;
     Grilleterrain* tab;
+    Point centre;
 public:
-    Tourelle(string nomTank,QGraphicsScene* scene,Hud* mainhud,Grilleterrain* tab);
+    Tourelle(string nomTank,QGraphicsScene* scene,Hud* mainhud,Grilleterrain* tab,Point centre);
     void keyPressEvent(QKeyEvent* event);
     void set_angle_tourelle(int x){angle_tourelle=x;}
     void set_angle_canon(int x){angle_canon=x;}
+    void setcentre(Point p){centre=p;}
     string getType(){return type;}
     int get_angle_tourelle(){return angle_tourelle;}
     int get_angle_canon(){return angle_canon;}

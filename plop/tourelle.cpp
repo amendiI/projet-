@@ -1,6 +1,6 @@
 #include "tourelle.h"
 
-Tourelle::Tourelle(string nomTank, QGraphicsScene *scene, Hud *mainhud, Grilleterrain *tab)
+Tourelle::Tourelle(string nomTank, QGraphicsScene *scene, Hud *mainhud, Grilleterrain *tab,Point centre)
 {
     type=nomTank;
     if(type=="tiger")
@@ -21,6 +21,8 @@ Tourelle::Tourelle(string nomTank, QGraphicsScene *scene, Hud *mainhud, Grillete
     hud->setHudAngleTourelle(rotation());
     hud->setHudAngleCanon(angle_canon);
     this->tab=tab;
+    this->centre=centre;
+
 }
 
 void Tourelle::keyPressEvent(QKeyEvent *event)
@@ -44,7 +46,7 @@ void Tourelle::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() ==Qt::Key_Space)
     {
-        Tir* t=new Tir(Point (30,30),60,60,3,tab);
+        Tir* t=new Tir(centre,rotation(),angle_canon,3,tab);
 
         t->trajectoire(scene);
     }

@@ -30,5 +30,5 @@ terrain::terrain()
 
  void terrain::setimage()
  {
-     setPixmap(QPixmap(IMG_crevasse));
+     setPixmap(QPixmap(":/images/shell1.png"));
  }

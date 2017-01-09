@@ -3,10 +3,13 @@
 
 Tank::Tank(Grilleterrain *grille, string nomTank, Point pos, QGraphicsScene *scene,Hud* mainhud)
 {
+    tab=grille;
     obus2=10;
     obus3=5;
     setPos(pos.getx(),pos.gety());
-    tourelle= new Tourelle(nomTank,scene,mainhud,tab);
+    centre.setx(x()/5-4);
+    centre.sety(y()/5-6);
+    tourelle= new Tourelle(nomTank,scene,mainhud,tab,Point(((x()+22)/5),((y()+12)/5)));
     if(nomTank=="tiger")
     {
         setPixmap(QPixmap(":/images/tigercaisse.png"));
@@ -23,9 +26,8 @@ Tank::Tank(Grilleterrain *grille, string nomTank, Point pos, QGraphicsScene *sce
     setAngle(0);
     setPm(W/50);
     this->scene=scene;
-    centre.setx(x()/5-4);
-    centre.sety(y()/5-6);
-    tab=grille;
+
+
     hud=mainhud;
     hud->setHudPm(pm);
     hud->setHudObus2(obus2);
@@ -150,6 +152,7 @@ void Tank::keyPressEvent(QKeyEvent *event)
             tourelle->setPos(c->tourelle->pos());
             setPos(c->pos());
             centre=c->centre;
+            tourelle->setcentre(Point(((x()+22)/5),((y()+12)/5)));
             pm--;
             hud->setHudPm(pm);
             aff_rot=tourelle->rotation();
